@@ -150,4 +150,29 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import io, sys, contextlib, traceback
+
+    buf = io.StringIO()
+
+    class Tee:
+        encoding = "utf-8"
+
+        def write(self, s):
+            buf.write(s)
+            sys.__stdout__.write(s)
+
+        def flush(self):
+            pass
+
+        def isatty(self):
+            return False
+
+    try:
+        with contextlib.redirect_stdout(Tee()), contextlib.redirect_stderr(Tee()):
+            main()
+    except Exception:
+        buf.write(traceback.format_exc())
+    finally:
+        text = buf.getvalue().replace(TOKEN, "***")
+        with open("log.txt", "w", encoding="utf-8") as f:
+            f.write(text[-6000:])
