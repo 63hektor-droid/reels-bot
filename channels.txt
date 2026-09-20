@@ -1,0 +1,22 @@
+# Public Telegram channels (English) used as video sources. One per line, without @.
+# Lines starting with # are ignored. Check each channel yourself before keeping it.
+
+# Funny animals
+lolanimalz
+funnyanimals_t_me
+animals_funny_videos
+funny1pet
+you_can_pet
+cutehappystuffs
+
+# Memes and humor
+funny_memes_jokes_english_gifs
+chicomemes
+plantainchipps
+
+# Nature and wildlife
+nature
+tgrealnature
+discovery_animal_planet
+
+# Motivational: add an English motivational channel here (no reliable username found yet)
