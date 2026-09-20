@@ -1,0 +1,13 @@
+[generic] Extracting URL: https://www.instagram.com/nasa/reels/
+[generic] reels: Downloading webpage
+ERROR: [generic] reels: Unable to download webpage: HTTP Error 429: Too Many Requests (caused by <HTTPError 429: Too Many Requests>)
+skip nasa ERROR: [generic] reels: Unable to download webpage: HTTP Error 429: Too Many Requests (caused by <HTTPError 429: Too Many Requests>)
+[generic] Extracting URL: https://www.instagram.com/natgeo/reels/
+[generic] reels: Downloading webpage
+ERROR: [generic] reels: Unable to download webpage: HTTP Error 429: Too Many Requests (caused by <HTTPError 429: Too Many Requests>)
+skip natgeo ERROR: [generic] reels: Unable to download webpage: HTTP Error 429: Too Many Requests (caused by <HTTPError 429: Too Many Requests>)
+[generic] Extracting URL: https://www.instagram.com/9gag/reels/
+[generic] reels: Downloading webpage
+ERROR: [generic] reels: Unable to download webpage: HTTP Error 429: Too Many Requests (caused by <HTTPError 429: Too Many Requests>)
+skip 9gag ERROR: [generic] reels: Unable to download webpage: HTTP Error 429: Too Many Requests (caused by <HTTPError 429: Too Many Requests>)
+no video found
