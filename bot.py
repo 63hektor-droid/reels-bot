@@ -33,7 +33,7 @@ def save_posted(posted):
 
 
 def ydl_opts(**extra):
-    opts = {"quiet": True, "no_warnings": True, "ignoreerrors": True}
+    opts = {"quiet": False, "no_warnings": True, "ignoreerrors": False}
     if os.environ.get("IG_COOKIES"):
         with open("cookies.txt", "w", encoding="utf-8") as f:
             f.write(os.environ["IG_COOKIES"])
