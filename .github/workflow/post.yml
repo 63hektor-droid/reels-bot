@@ -1,45 +1,22 @@
-name: post
+# Public Telegram channels (English) used as video sources. One per line, without @.
+# Lines starting with # are ignored. Check each channel yourself before keeping it.
 
-on:
-  schedule:
-    - cron: "*/30 * * * *"
-  workflow_dispatch:
+# Funny animals
+lolanimalz
+funnyanimals_t_me
+animals_funny_videos
+funny1pet
+you_can_pet
+cutehappystuffs
 
-permissions:
-  contents: write
+# Memes and humor
+funny_memes_jokes_english_gifs
+chicomemes
+plantainchipps
 
-jobs:
-  run:
-    runs-on: ubuntu-latest
-    timeout-minutes: 25
-    steps:
-      - uses: actions/checkout@v4
+# Nature and wildlife
+nature
+tgrealnature
+discovery_animal_planet
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - uses: actions/cache@v4
-        with:
-          path: ~/.cache/huggingface
-          key: whisper-base
-
-      - name: Install
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y ffmpeg fonts-noto-core
-          pip install -r requirements.txt
-
-      - name: Run bot
-        run: python bot.py
-        env:
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-          IG_COOKIES: ${{ secrets.IG_COOKIES }}
-
-      - name: Save posted list
-        run: |
-          git config user.name "bot"
-          git config user.email "bot@users.noreply.github.com"
-          git add posted.json || true
-          git commit -m "update posted" || true
-          git push || true
+# Motivational: add an English motivational channel here (no reliable username found yet)
