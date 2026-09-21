@@ -221,7 +221,11 @@ def transcribe(path, duration):
     return has_speech, segs, info.language
 
 
-def _chunks(texts, limit=4000):
+class TranslateError(Exception):
+    """All translation services failed. The video is NOT burned; next run tries again."""
+
+
+def _chunks(texts, limit=3500):
     chunk, size = [], 0
     for t in texts:
         if chunk and size + len(t) + 1 > limit:
@@ -233,57 +237,79 @@ def _chunks(texts, limit=4000):
         yield chunk
 
 
-def _translate_chunk(chunk):
-    """One single request for many lines (Google blocks many quick requests)."""
-    from deep_translator import GoogleTranslator
-
-    tr = GoogleTranslator(source="auto", target="fa")
-    joined = "\n".join(" ".join(t.split()) for t in chunk)
-    out = tr.translate(joined) or ""
-    parts = [x.strip() for x in out.split("\n")]
-    if len(parts) != len(chunk):
-        raise ValueError(f"line count changed ({len(parts)} vs {len(chunk)})")
+def _split_back(out, n):
+    parts = [x.strip() for x in (out or "").strip().split("\n")]
+    if len(parts) != n:
+        parts = [x for x in parts if x]  # drop blank lines Google may add
+    if len(parts) != n:
+        raise ValueError(f"line count changed ({len(parts)} vs {n})")
     return parts
 
 
-def _translate_safe(chunk, delays):
-    last = None
-    for d in delays:
-        if d:
-            time.sleep(d)
-        try:
-            return _translate_chunk(chunk)
-        except ValueError as e:
-            last = e
-            break  # line count changed: translate line by line below
-        except Exception as e:
-            last = e
-            print(f"  translate error, will retry: {str(e)[:90]}")
-    from deep_translator import GoogleTranslator
+def _tr_gtx(lines, lang):
+    """Google's public 'gtx' endpoint, one request for all lines."""
+    joined = "\n".join(" ".join(t.split()) for t in lines)
+    r = requests.get(
+        "https://translate.googleapis.com/translate_a/single",
+        params={"client": "gtx", "sl": lang or "auto", "tl": "fa", "dt": "t", "q": joined},
+        headers=UA, timeout=30,
+    )
+    r.raise_for_status()
+    data = r.json()
+    out = "".join(part[0] for part in data[0] if part and part[0])
+    return _split_back(out, len(lines))
 
-    tr = GoogleTranslator(source="auto", target="fa")
+
+def _tr_mymemory(lines, lang):
+    """MyMemory free API, one request per line."""
+    src = lang if lang and lang != "auto" else "en"
     res = []
-    for t in chunk:
-        for attempt in range(len(delays)):
-            try:
-                res.append(tr.translate(t) or t)
-                break
-            except Exception as e:
-                last = e
-                time.sleep(5 * (attempt + 1))
-        else:
-            raise RuntimeError(f"translation failed: {str(last)[:150]}")
-        time.sleep(1.5)
+    for t in lines:
+        t = " ".join(t.split())
+        r = requests.get(
+            "https://api.mymemory.translated.net/get",
+            params={"q": t[:450], "langpair": f"{src}|fa"},
+            headers=UA, timeout=30,
+        )
+        r.raise_for_status()
+        out = (r.json().get("responseData") or {}).get("translatedText") or ""
+        if not out or "MYMEMORY WARNING" in out.upper():
+            raise RuntimeError(f"mymemory refused: {out[:80]}")
+        res.append(out.strip())
+        time.sleep(0.5)
     return res
 
 
-def to_persian(texts, lang="auto", delays=(0, 10, 30, 60)):
+def _tr_deep_google(lines, lang):
+    """The library that failed before; kept as the last option."""
+    from deep_translator import GoogleTranslator
+
+    tr = GoogleTranslator(source="auto", target="fa")
+    joined = "\n".join(" ".join(t.split()) for t in lines)
+    return _split_back(tr.translate(joined), len(lines))
+
+
+def translate_lines(lines, lang):
+    errors = []
+    for name, fn in (("gtx", _tr_gtx), ("mymemory", _tr_mymemory), ("google", _tr_deep_google)):
+        for attempt in range(2):
+            try:
+                res = fn(lines, lang)
+                print(f"  translated with {name}")
+                return res
+            except Exception as e:
+                errors.append(f"{name}: {str(e)[:80]}")
+                print(f"  translate error ({name}, try {attempt + 1}): {str(e)[:80]}")
+                time.sleep(3)
+    raise TranslateError("; ".join(errors[-3:]))
+
+
+def to_persian(texts, lang="auto"):
     if lang == "fa":
         return texts
     out = []
     for chunk in _chunks(texts):
-        out.extend(_translate_safe(chunk, delays))
-        time.sleep(2)
+        out.extend(translate_lines(chunk, lang))
     return out
 
 
@@ -324,7 +350,7 @@ def build_caption(original_text, channel):
     cap = ""
     if original_text:
         try:
-            cap = to_persian([original_text], "auto", delays=(0, 15))[0]
+            cap = to_persian([original_text], "auto")[0]
         except Exception:
             cap = ""
     return (cap + "\n\nمنبع: @" + channel).strip()
@@ -388,6 +414,10 @@ def main():
             print(f"  skipped: {e}")
             state["posted"].append(key)
             continue
+        except TranslateError as e:
+            errors += 1
+            print(f"  translation is down, will retry next run: {e}")
+            break
         except Exception as e:
             errors += 1
             fails = state["fails"].get(key, 0) + 1
