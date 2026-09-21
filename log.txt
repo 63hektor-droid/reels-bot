@@ -4,12 +4,12 @@ settings: MIN_VIEWS=5000 MAX_AGE_DAYS=14 PAGES=3 target=@my_reels_fa
 [funny1pet] http=200 posts=59 videos=38 (no_link=13) | rejected: old=33 done=0 bad_length=0 low_views=5 no_laugh=0 | OK=0 | best_video_views=5600 newest=2026-09-16
 [you_can_pet] http=200 posts=55 videos=51 (no_link=0) | rejected: old=46 done=0 bad_length=0 low_views=5 no_laugh=0 | OK=0 | best_video_views=11000 newest=2026-09-21
 [cutehappystuffs] http=200 posts=57 videos=29 (no_link=0) | rejected: old=0 done=0 bad_length=1 low_views=28 no_laugh=0 | OK=0 | best_video_views=4260 newest=2026-09-21
-[nature] http=200 posts=60 videos=60 (no_link=0) | rejected: old=0 done=3 bad_length=0 low_views=48 no_laugh=0 | OK=9 | best_video_views=5540 newest=2026-09-21
+[nature] http=200 posts=60 videos=60 (no_link=0) | rejected: old=0 done=4 bad_length=0 low_views=48 no_laugh=0 | OK=8 | best_video_views=5540 newest=2026-09-21
 [tgrealnature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=47 done=1 bad_length=0 low_views=11 no_laugh=0 | OK=0 | best_video_views=7810 newest=2026-09-21
-[keereker] http=200 posts=60 videos=42 (no_link=0) | rejected: old=0 done=15 bad_length=3 low_views=4 no_laugh=20 | OK=0 | best_video_views=26400 newest=2026-09-21
-9 candidate videos
-trying nature/20266 (5330 views)
-[0;93m2026-09-21 21:35:28.043250996 [W:onnxruntime:Default, device_discovery.cc:146 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
+[keereker] http=200 posts=60 videos=40 (no_link=0) | rejected: old=0 done=12 bad_length=3 low_views=7 no_laugh=18 | OK=0 | best_video_views=26400 newest=2026-09-21
+8 candidate videos
+trying nature/20263 (5300 views)
+[0;93m2026-09-21 22:03:15.407958933 [W:onnxruntime:Default, device_discovery.cc:146 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
   no speech, posting without subtitles
   translate error (gtx, try 1): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
   translate error (gtx, try 2): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
