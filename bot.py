@@ -221,16 +221,69 @@ def transcribe(path, duration):
     return has_speech, segs, info.language
 
 
-def to_persian(texts, lang):
-    if lang == "fa":
-        return texts
+def _chunks(texts, limit=4000):
+    chunk, size = [], 0
+    for t in texts:
+        if chunk and size + len(t) + 1 > limit:
+            yield chunk
+            chunk, size = [], 0
+        chunk.append(t)
+        size += len(t) + 1
+    if chunk:
+        yield chunk
+
+
+def _translate_chunk(chunk):
+    """One single request for many lines (Google blocks many quick requests)."""
     from deep_translator import GoogleTranslator
 
     tr = GoogleTranslator(source="auto", target="fa")
+    joined = "\n".join(" ".join(t.split()) for t in chunk)
+    out = tr.translate(joined) or ""
+    parts = [x.strip() for x in out.split("\n")]
+    if len(parts) != len(chunk):
+        raise ValueError(f"line count changed ({len(parts)} vs {len(chunk)})")
+    return parts
+
+
+def _translate_safe(chunk, delays):
+    last = None
+    for d in delays:
+        if d:
+            time.sleep(d)
+        try:
+            return _translate_chunk(chunk)
+        except ValueError as e:
+            last = e
+            break  # line count changed: translate line by line below
+        except Exception as e:
+            last = e
+            print(f"  translate error, will retry: {str(e)[:90]}")
+    from deep_translator import GoogleTranslator
+
+    tr = GoogleTranslator(source="auto", target="fa")
+    res = []
+    for t in chunk:
+        for attempt in range(len(delays)):
+            try:
+                res.append(tr.translate(t) or t)
+                break
+            except Exception as e:
+                last = e
+                time.sleep(5 * (attempt + 1))
+        else:
+            raise RuntimeError(f"translation failed: {str(last)[:150]}")
+        time.sleep(1.5)
+    return res
+
+
+def to_persian(texts, lang="auto", delays=(0, 10, 30, 60)):
+    if lang == "fa":
+        return texts
     out = []
-    for t in texts:
-        out.append(tr.translate(t) or t)
-        time.sleep(0.2)
+    for chunk in _chunks(texts):
+        out.extend(_translate_safe(chunk, delays))
+        time.sleep(2)
     return out
 
 
@@ -271,7 +324,7 @@ def build_caption(original_text, channel):
     cap = ""
     if original_text:
         try:
-            cap = to_persian([original_text], "auto")[0]
+            cap = to_persian([original_text], "auto", delays=(0, 15))[0]
         except Exception:
             cap = ""
     return (cap + "\n\nمنبع: @" + channel).strip()
