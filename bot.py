@@ -1,37 +1,41 @@
 #!/usr/bin/env python3
-"""Reels Farsi bot.
+"""Reels Farsi bot, version 2.
 
 Every run:
-1. reads public Telegram channels from channels.txt (via the t.me/s/ web preview),
-2. picks a recent video whose views are well above that channel's own average,
-3. if the video has speech: transcribes it, translates to Persian, burns subtitles,
-   otherwise posts the video as it is,
+1. reads the public Telegram channels in channels.txt (t.me/s/<name> web preview),
+2. keeps recent videos that have at least MIN_VIEWS views,
+3. downloads the best one; if it has speech, transcribes it, translates to Persian
+   and burns subtitles,
 4. posts it to our channel and remembers it in posted.json.
+
+The log says, for every channel, WHY posts were rejected.
 """
 import json
 import os
 import re
-import statistics
 import subprocess
+import sys
 import tempfile
 import textwrap
 import time
+import traceback
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import requests
 from bs4 import BeautifulSoup
 
-# ---------------- settings (can be overridden with environment variables) -------------
-TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
-TARGET = os.environ.get("CHANNEL_ID", "@my_reels_fa")
-MIN_RATIO = float(os.environ.get("MIN_RATIO", "2.0"))      # views >= 2x channel median
-MIN_VIEWS = int(os.environ.get("MIN_VIEWS", "1000"))       # ignore tiny numbers
-MAX_AGE_DAYS = int(os.environ.get("MAX_AGE_DAYS", "7"))    # only recent videos
-MAX_DURATION = int(os.environ.get("MAX_DURATION", "120"))  # seconds
+# ---------------- settings (environment variables override the defaults) ----------------
+TOKEN = (os.environ.get("TELEGRAM_BOT_TOKEN") or "").strip()
+TARGET = (os.environ.get("CHANNEL_ID") or "@my_reels_fa").strip()
+MIN_VIEWS = int(os.environ.get("MIN_VIEWS") or "10000")
+MAX_AGE_DAYS = int(os.environ.get("MAX_AGE_DAYS") or "14")
+PAGES = int(os.environ.get("PAGES") or "3")                 # pages of ~20 posts per channel
+MAX_DURATION = int(os.environ.get("MAX_DURATION") or "120")  # seconds
 MIN_DURATION = 3
-MAX_MB = 45                                                # Telegram bot upload limit is 50 MB
-WHISPER_MODEL = os.environ.get("WHISPER_MODEL", "small")
+MAX_MB = 45                                                  # bot upload limit is 50 MB
+WHISPER_MODEL = os.environ.get("WHISPER_MODEL") or "small"
+TRIES_PER_RUN = 5
 STATE_FILE = Path("posted.json")
 UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120 Safari/537.36"}
 
@@ -40,7 +44,7 @@ class Skip(Exception):
     """Video is not usable (too long, too big, ...). It will not be retried."""
 
 
-# ---------------- state ----------------------------------------------------------------
+# ---------------- state ------------------------------------------------------------------
 def load_state():
     if STATE_FILE.exists():
         try:
@@ -56,14 +60,24 @@ def save_state(state):
     STATE_FILE.write_text(json.dumps(state, ensure_ascii=False, indent=1))
 
 
-# ---------------- reading channels -----------------------------------------------------
+# ---------------- reading channels -------------------------------------------------------
 def parse_views(text):
-    t = text.strip().upper().replace(",", "")
+    t = (text or "").strip().upper().replace(",", "")
     m = re.match(r"^([\d.]+)\s*([KM]?)$", t)
     if not m:
         return 0
     mult = {"": 1, "K": 1_000, "M": 1_000_000}[m.group(2)]
     return int(float(m.group(1)) * mult)
+
+
+def parse_duration(text):
+    parts = re.findall(r"\d+", text or "")
+    if not parts:
+        return None
+    sec = 0
+    for x in parts:
+        sec = sec * 60 + int(x)
+    return sec
 
 
 def parse_page(html, channel):
@@ -75,8 +89,10 @@ def parse_page(html, channel):
         except ValueError:
             continue
         views_el = msg.select_one(".tgme_widget_message_views")
-        views = parse_views(views_el.get_text()) if views_el else 0
-        video = msg.select_one("video.tgme_widget_message_video[src]")
+        video = msg.select_one("video[src]")
+        has_player = bool(msg.select_one(
+            ".tgme_widget_message_video_player, .tgme_widget_message_roundvideo_player"))
+        dur_el = msg.select_one(".message_video_duration")
         text_el = msg.select_one(".tgme_widget_message_text")
         date = None
         time_el = msg.select_one("time[datetime]")
@@ -89,19 +105,24 @@ def parse_page(html, channel):
             "channel": channel,
             "id": pid,
             "key": f"{channel}/{pid}",
-            "views": views,
+            "views": parse_views(views_el.get_text()) if views_el else 0,
             "video_url": video["src"] if video else None,
+            "has_player": has_player,
+            "duration": parse_duration(dur_el.get_text()) if dur_el else None,
             "text": text_el.get_text(" ", strip=True) if text_el else "",
             "date": date,
         })
     return posts
 
 
-def fetch_posts(channel, pages=2):
-    posts = []
+def fetch_posts(channel):
+    """Returns (posts, http_status_of_first_page)."""
+    posts, first_status = [], None
     url = f"https://t.me/s/{channel}"
-    for _ in range(pages):
+    for _ in range(PAGES):
         r = requests.get(url, headers=UA, timeout=30)
+        if first_status is None:
+            first_status = r.status_code
         if r.status_code != 200:
             break
         page = parse_page(r.text, channel)
@@ -110,7 +131,7 @@ def fetch_posts(channel, pages=2):
         posts.extend(page)
         url = f"https://t.me/s/{channel}?before={min(p['id'] for p in page)}"
         time.sleep(1)
-    return posts
+    return posts, first_status
 
 
 def find_candidates(channels, state):
@@ -119,36 +140,51 @@ def find_candidates(channels, state):
     found = []
     for ch in channels:
         try:
-            posts = fetch_posts(ch)
-        except Exception as e:  # network problem with one channel must not stop the rest
+            posts, status = fetch_posts(ch)
+        except Exception as e:
             print(f"[{ch}] fetch failed: {e}")
             continue
-        views = [p["views"] for p in posts if p["views"] > 0]
-        if len(views) < 8:
-            print(f"[{ch}] not enough posts with views ({len(views)}), skipped")
-            continue
-        base = statistics.median(views)
-        n = 0
+        c = dict(videos=0, no_src=0, old=0, done=0, long=0, low=0, ok=0)
+        best = 0
+        newest = None
         for p in posts:
-            if not p["video_url"] or p["key"] in done:
+            if p["date"] and (newest is None or p["date"] > newest):
+                newest = p["date"]
+            if not p["video_url"]:
+                if p["has_player"]:
+                    c["no_src"] += 1  # video exists but the preview gives no direct link
                 continue
-            if p["date"] and now - p["date"] > timedelta(days=MAX_AGE_DAYS):
-                continue
-            if p["views"] < MIN_VIEWS or not base:
-                continue
-            ratio = p["views"] / base
-            if ratio >= MIN_RATIO:
-                p["ratio"] = ratio
+            c["videos"] += 1
+            best = max(best, p["views"])
+            if p["key"] in done:
+                c["done"] += 1
+            elif p["date"] and now - p["date"] > timedelta(days=MAX_AGE_DAYS):
+                c["old"] += 1
+            elif p["duration"] and not (MIN_DURATION <= p["duration"] <= MAX_DURATION):
+                c["long"] += 1
+            elif p["views"] < MIN_VIEWS:
+                c["low"] += 1
+            else:
+                c["ok"] += 1
                 found.append(p)
-                n += 1
-        vids = [p for p in posts if p["video_url"]]
-        best = max([p["views"] for p in vids], default=0) / base
-        print(f"[{ch}] posts {len(posts)}, videos {len(vids)}, median {int(base)}, best video {best:.1f}x, candidates {n}")
-    found.sort(key=lambda p: p["ratio"], reverse=True)
+        print(
+            f"[{ch}] http={status} posts={len(posts)} videos={c['videos']} "
+            f"(no_link={c['no_src']}) | rejected: old={c['old']} done={c['done']} "
+            f"bad_length={c['long']} low_views={c['low']} | OK={c['ok']} | "
+            f"best_video_views={best} newest={newest.date() if newest else '-'}"
+        )
+    found.sort(key=lambda p: p["views"], reverse=True)
     return found
 
 
-# ---------------- video helpers --------------------------------------------------------
+# ---------------- video helpers ----------------------------------------------------------
+def run(cmd, cwd=None):
+    r = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True)
+    if r.returncode != 0:
+        raise RuntimeError(f"{cmd[0]} failed: {(r.stderr or '')[-400:]}")
+    return r.stdout
+
+
 def download(url, dest):
     size = 0
     with requests.get(url, headers=UA, stream=True, timeout=60) as r:
@@ -162,10 +198,8 @@ def download(url, dest):
 
 
 def video_duration(path):
-    out = subprocess.run(
-        ["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(path)],
-        capture_output=True, text=True, check=True,
-    ).stdout.strip()
+    out = run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
+               "-of", "csv=p=0", str(path)]).strip()
     return float(out)
 
 
@@ -175,8 +209,7 @@ def transcribe(path, duration):
 
     model = WhisperModel(WHISPER_MODEL, device="cpu", compute_type="int8")
     segments, info = model.transcribe(
-        path, vad_filter=True, beam_size=1, condition_on_previous_text=False
-    )
+        path, vad_filter=True, beam_size=1, condition_on_previous_text=False)
     segs = []
     for s in segments:
         text = s.text.strip()
@@ -218,19 +251,15 @@ def write_srt(path, segs, fa_texts):
 
 
 def burn_subtitles(workdir):
-    style = (
-        "FontName=Vazirmatn,FontSize=18,PrimaryColour=&H00FFFFFF,"
-        "OutlineColour=&H00000000,BorderStyle=1,Outline=2,Shadow=0,Alignment=2,MarginV=30"
-    )
+    style = ("FontName=Vazirmatn,FontSize=18,PrimaryColour=&H00FFFFFF,"
+             "OutlineColour=&H00000000,BorderStyle=1,Outline=2,Shadow=0,Alignment=2,MarginV=30")
     vf = f"scale=trunc(iw/2)*2:trunc(ih/2)*2,subtitles=subs.srt:force_style='{style}'"
-    subprocess.run(
-        ["ffmpeg", "-y", "-i", "in.mp4", "-vf", vf, "-c:v", "libx264", "-preset", "veryfast",
+    run(["ffmpeg", "-y", "-i", "in.mp4", "-vf", vf, "-c:v", "libx264", "-preset", "veryfast",
          "-crf", "23", "-c:a", "aac", "-b:a", "128k", "-movflags", "+faststart", "out.mp4"],
-        cwd=workdir, check=True, capture_output=True,
-    )
+        cwd=workdir)
 
 
-# ---------------- posting --------------------------------------------------------------
+# ---------------- posting ----------------------------------------------------------------
 def clean_caption(text):
     text = re.sub(r"https?://\S+", "", text)
     text = re.sub(r"@\w+", "", text)
@@ -238,15 +267,14 @@ def clean_caption(text):
     return text[:200] if len(text) >= 3 else ""
 
 
-def build_caption(original_text, channel, lang):
+def build_caption(original_text, channel):
     cap = ""
     if original_text:
         try:
             cap = to_persian([original_text], "auto")[0]
         except Exception:
             cap = ""
-    source = f"منبع: @{channel}"
-    return (cap + "\n\n" + source).strip()
+    return (cap + "\n\nمنبع: @" + channel).strip()
 
 
 def send_video(path, caption):
@@ -281,13 +309,13 @@ def process(p):
         else:
             print("  no speech, posting without subtitles")
 
-        caption = build_caption(clean_caption(p["text"]), p["channel"], lang)
-        send_video(final, caption)
+        send_video(final, build_caption(clean_caption(p["text"]), p["channel"]))
 
 
 def main():
     if not TOKEN:
-        raise SystemExit("TELEGRAM_BOT_TOKEN is not set")
+        raise SystemExit("TELEGRAM_BOT_TOKEN is not set (check the secret name in reels.yml)")
+    print(f"settings: MIN_VIEWS={MIN_VIEWS} MAX_AGE_DAYS={MAX_AGE_DAYS} PAGES={PAGES} target={TARGET}")
     channels = [
         line.strip().lstrip("@")
         for line in Path("channels.txt").read_text().splitlines()
@@ -297,9 +325,10 @@ def main():
     candidates = find_candidates(channels, state)
     print(f"{len(candidates)} candidate videos")
 
-    for p in candidates[:5]:
+    posted, errors = False, 0
+    for p in candidates[:TRIES_PER_RUN]:
         key = p["key"]
-        print(f"trying {key} (views {p['views']}, {p['ratio']:.1f}x average)")
+        print(f"trying {key} ({p['views']} views)")
         try:
             process(p)
         except Skip as e:
@@ -307,18 +336,23 @@ def main():
             state["posted"].append(key)
             continue
         except Exception as e:
+            errors += 1
             fails = state["fails"].get(key, 0) + 1
             state["fails"][key] = fails
             print(f"  failed ({fails}): {e}")
+            traceback.print_exc(file=sys.stdout)
             if fails >= 3:
                 state["posted"].append(key)
             continue
         state["posted"].append(key)
         print("  posted")
+        posted = True
         break
-    else:
+    if not posted:
         print("nothing posted this run")
     save_state(state)
+    if candidates and not posted and errors:
+        sys.exit(1)  # make the run red so the problem is visible
 
 
 if __name__ == "__main__":
