@@ -1,14 +1,14 @@
-[lolanimalz] median views 4615, candidates 0
-[funnyanimals_t_me] median views 3780, candidates 0
-[animals_funny_videos] median views 1235, candidates 0
-[funny1pet] median views 2070, candidates 0
-[you_can_pet] median views 1700, candidates 0
-[cutehappystuffs] median views 2490, candidates 0
-[funny_memes_jokes_english_gifs] median views 20000, candidates 0
+[lolanimalz] posts 40, videos 34, median 4615, best video 1.8x, candidates 0
+[funnyanimals_t_me] posts 40, videos 39, median 3780, best video 1.2x, candidates 0
+[animals_funny_videos] posts 40, videos 37, median 1235, best video 2.4x, candidates 0
+[funny1pet] posts 39, videos 22, median 2070, best video 1.5x, candidates 0
+[you_can_pet] posts 35, videos 32, median 1700, best video 3.3x, candidates 0
+[cutehappystuffs] posts 39, videos 19, median 2490, best video 1.4x, candidates 0
+[funny_memes_jokes_english_gifs] posts 40, videos 0, median 20000, best video 0.0x, candidates 0
 [chicomemes] not enough posts with views (1), skipped
-[plantainchipps] median views 9490, candidates 0
-[nature] median views 4160, candidates 0
-[tgrealnature] median views 5615, candidates 0
-[discovery_animal_planet] median views 216, candidates 0
+[plantainchipps] posts 40, videos 0, median 9490, best video 0.0x, candidates 0
+[nature] posts 40, videos 40, median 4165, best video 1.3x, candidates 0
+[tgrealnature] posts 40, videos 39, median 5615, best video 1.4x, candidates 0
+[discovery_animal_planet] posts 13, videos 1, median 216, best video 0.8x, candidates 0
 0 candidate videos
 nothing posted this run
