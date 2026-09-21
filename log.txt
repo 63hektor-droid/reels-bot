@@ -6,10 +6,12 @@ settings: MIN_VIEWS=5000 MAX_AGE_DAYS=14 PAGES=3 target=@my_reels_fa
 [cutehappystuffs] http=200 posts=57 videos=29 (no_link=0) | rejected: old=0 done=0 bad_length=1 low_views=28 no_laugh=0 | OK=0 | best_video_views=4260 newest=2026-09-21
 [nature] http=200 posts=60 videos=60 (no_link=0) | rejected: old=0 done=1 bad_length=0 low_views=47 no_laugh=0 | OK=12 | best_video_views=5530 newest=2026-09-21
 [tgrealnature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=47 done=1 bad_length=0 low_views=11 no_laugh=0 | OK=0 | best_video_views=7810 newest=2026-09-21
-[keereker] http=200 posts=60 videos=42 (no_link=0) | rejected: old=0 done=12 bad_length=4 low_views=5 no_laugh=19 | OK=2 | best_video_views=26200 newest=2026-09-21
+[keereker] http=200 posts=60 videos=42 (no_link=0) | rejected: old=0 done=13 bad_length=4 low_views=1 no_laugh=22 | OK=2 | best_video_views=26200 newest=2026-09-21
 14 candidate videos
-trying keereker/255565 (14000 views)
-[0;93m2026-09-21 18:39:33.699125891 [W:onnxruntime:Default, device_discovery.cc:146 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
+trying keereker/255575 (10800 views)
+[0;93m2026-09-21 19:03:37.067648431 [W:onnxruntime:Default, device_discovery.cc:146 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
   speech found (lang=fa), subtitles burned
-  translated with gtx
+  translate error (gtx, try 1): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
+  translate error (gtx, try 2): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
+  translated with mymemory
   posted
