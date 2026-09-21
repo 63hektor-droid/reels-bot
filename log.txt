@@ -7,7 +7,7 @@
 [funny_memes_jokes_english_gifs] median views 20000, candidates 0
 [chicomemes] not enough posts with views (1), skipped
 [plantainchipps] median views 9490, candidates 0
-[nature] median views 4155, candidates 0
+[nature] median views 4160, candidates 0
 [tgrealnature] median views 5615, candidates 0
 [discovery_animal_planet] median views 216, candidates 0
 0 candidate videos
