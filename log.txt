@@ -1,35 +1,15 @@
 settings: MIN_VIEWS=10000 MAX_AGE_DAYS=14 PAGES=3 target=@my_reels_fa
 [lolanimalz] http=200 posts=54 videos=45 (no_link=7) | rejected: old=45 done=0 bad_length=0 low_views=0 | OK=0 | best_video_views=8480 newest=2026-04-25
-[funnyanimals_t_me] http=200 posts=60 videos=59 (no_link=1) | rejected: old=47 done=0 bad_length=0 low_views=12 | OK=0 | best_video_views=4570 newest=2026-09-20
+[funnyanimals_t_me] http=200 posts=60 videos=59 (no_link=1) | rejected: old=47 done=0 bad_length=0 low_views=12 | OK=0 | best_video_views=4580 newest=2026-09-20
 [animals_funny_videos] http=200 posts=60 videos=58 (no_link=1) | rejected: old=57 done=0 bad_length=0 low_views=1 | OK=0 | best_video_views=2910 newest=2026-09-08
 [funny1pet] http=200 posts=59 videos=38 (no_link=13) | rejected: old=33 done=0 bad_length=0 low_views=5 | OK=0 | best_video_views=5600 newest=2026-09-16
 [you_can_pet] http=200 posts=54 videos=50 (no_link=0) | rejected: old=46 done=0 bad_length=0 low_views=4 | OK=0 | best_video_views=10900 newest=2026-09-19
-[cutehappystuffs] http=200 posts=57 videos=29 (no_link=0) | rejected: old=0 done=0 bad_length=1 low_views=28 | OK=0 | best_video_views=4220 newest=2026-09-21
+[cutehappystuffs] http=200 posts=57 videos=29 (no_link=0) | rejected: old=0 done=0 bad_length=1 low_views=28 | OK=0 | best_video_views=4230 newest=2026-09-21
 [funny_memes_jokes_english_gifs] http=200 posts=60 videos=0 (no_link=0) | rejected: old=0 done=0 bad_length=0 low_views=0 | OK=0 | best_video_views=0 newest=2026-07-07
 [chicomemes] http=200 posts=2 videos=0 (no_link=0) | rejected: old=0 done=0 bad_length=0 low_views=0 | OK=0 | best_video_views=0 newest=2026-09-20
-[plantainchipps] http=200 posts=60 videos=1 (no_link=0) | rejected: old=0 done=0 bad_length=0 low_views=0 | OK=1 | best_video_views=10500 newest=2026-09-21
+[plantainchipps] http=200 posts=60 videos=1 (no_link=0) | rejected: old=0 done=1 bad_length=0 low_views=0 | OK=0 | best_video_views=10500 newest=2026-09-21
 [nature] http=200 posts=60 videos=60 (no_link=0) | rejected: old=0 done=0 bad_length=0 low_views=60 | OK=0 | best_video_views=5470 newest=2026-09-21
 [tgrealnature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=48 done=0 bad_length=0 low_views=11 | OK=0 | best_video_views=7800 newest=2026-09-20
 [discovery_animal_planet] http=200 posts=20 videos=3 (no_link=0) | rejected: old=0 done=0 bad_length=0 low_views=3 | OK=0 | best_video_views=273 newest=2026-09-20
-1 candidate videos
-trying plantainchipps/18469 (10500 views)
-Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-[0;93m2026-09-21 07:17:20.939351792 [W:onnxruntime:Default, device_discovery.cc:146 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
-  translate error, will retry: Server Error: You made too many requests to the server.According to google, you are allowe
-  translate error, will retry: Server Error: You made too many requests to the server.According to google, you are allowe
-  translate error, will retry: Server Error: You made too many requests to the server.According to google, you are allowe
-  translate error, will retry: Server Error: You made too many requests to the server.According to google, you are allowe
-  failed (3): translation failed: Server Error: You made too many requests to the server.According to google, you are allowed to make 5 requests per secondand up to 200k requests per d
-Traceback (most recent call last):
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 386, in main
-    process(p)
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 357, in process
-    fa = to_persian([t for _, _, t in segs], lang)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 285, in to_persian
-    out.extend(_translate_safe(chunk, delays))
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 275, in _translate_safe
-    raise RuntimeError(f"translation failed: {str(last)[:150]}")
-RuntimeError: translation failed: Server Error: You made too many requests to the server.According to google, you are allowed to make 5 requests per secondand up to 200k requests per d
+0 candidate videos
 nothing posted this run
