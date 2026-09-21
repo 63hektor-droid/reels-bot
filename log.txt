@@ -1,13 +1,14 @@
-[generic] Extracting URL: https://www.instagram.com/nasa/reels/
-[generic] reels: Downloading webpage
-ERROR: [generic] reels: Unable to download webpage: HTTP Error 429: Too Many Requests (caused by <HTTPError 429: Too Many Requests>)
-skip nasa ERROR: [generic] reels: Unable to download webpage: HTTP Error 429: Too Many Requests (caused by <HTTPError 429: Too Many Requests>)
-[generic] Extracting URL: https://www.instagram.com/natgeo/reels/
-[generic] reels: Downloading webpage
-ERROR: [generic] reels: Unable to download webpage: HTTP Error 429: Too Many Requests (caused by <HTTPError 429: Too Many Requests>)
-skip natgeo ERROR: [generic] reels: Unable to download webpage: HTTP Error 429: Too Many Requests (caused by <HTTPError 429: Too Many Requests>)
-[generic] Extracting URL: https://www.instagram.com/9gag/reels/
-[generic] reels: Downloading webpage
-ERROR: [generic] reels: Unable to download webpage: HTTP Error 429: Too Many Requests (caused by <HTTPError 429: Too Many Requests>)
-skip 9gag ERROR: [generic] reels: Unable to download webpage: HTTP Error 429: Too Many Requests (caused by <HTTPError 429: Too Many Requests>)
-no video found
+[lolanimalz] median views 4615, candidates 0
+[funnyanimals_t_me] median views 3780, candidates 0
+[animals_funny_videos] median views 1235, candidates 0
+[funny1pet] median views 2070, candidates 0
+[you_can_pet] median views 1700, candidates 0
+[cutehappystuffs] median views 2490, candidates 0
+[funny_memes_jokes_english_gifs] median views 20000, candidates 0
+[chicomemes] not enough posts with views (1), skipped
+[plantainchipps] median views 9490, candidates 0
+[nature] median views 4155, candidates 0
+[tgrealnature] median views 5615, candidates 0
+[discovery_animal_planet] median views 216, candidates 0
+0 candidate videos
+nothing posted this run
