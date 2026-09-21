@@ -1,16 +1,19 @@
 settings: MIN_VIEWS=5000 MAX_AGE_DAYS=14 PAGES=3 target=@my_reels_fa
 [funnyanimals_t_me] http=200 posts=60 videos=59 (no_link=1) | rejected: old=47 done=0 bad_length=0 low_views=12 no_laugh=0 | OK=0 | best_video_views=4580 newest=2026-09-20
-[animals_funny_videos] http=200 posts=60 videos=58 (no_link=1) | rejected: old=57 done=0 bad_length=0 low_views=1 no_laugh=0 | OK=0 | best_video_views=2940 newest=2026-09-08
+[animals_funny_videos] http=200 posts=60 videos=58 (no_link=1) | rejected: old=57 done=0 bad_length=0 low_views=1 no_laugh=0 | OK=0 | best_video_views=2950 newest=2026-09-08
 [funny1pet] http=200 posts=59 videos=38 (no_link=13) | rejected: old=33 done=0 bad_length=0 low_views=5 no_laugh=0 | OK=0 | best_video_views=5600 newest=2026-09-16
 [you_can_pet] http=200 posts=55 videos=51 (no_link=0) | rejected: old=46 done=0 bad_length=0 low_views=5 no_laugh=0 | OK=0 | best_video_views=11000 newest=2026-09-21
 [cutehappystuffs] http=200 posts=57 videos=29 (no_link=0) | rejected: old=0 done=0 bad_length=1 low_views=28 no_laugh=0 | OK=0 | best_video_views=4260 newest=2026-09-21
 [nature] http=200 posts=60 videos=60 (no_link=0) | rejected: old=0 done=1 bad_length=0 low_views=47 no_laugh=0 | OK=12 | best_video_views=5530 newest=2026-09-21
 [tgrealnature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=47 done=1 bad_length=0 low_views=11 no_laugh=0 | OK=0 | best_video_views=7810 newest=2026-09-21
-[keereker] http=200 posts=60 videos=42 (no_link=0) | rejected: old=0 done=13 bad_length=4 low_views=1 no_laugh=22 | OK=2 | best_video_views=26200 newest=2026-09-21
-14 candidate videos
-trying keereker/255575 (10800 views)
-[0;93m2026-09-21 19:03:37.067648431 [W:onnxruntime:Default, device_discovery.cc:146 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
-  speech found (lang=fa), subtitles burned
+[keereker] http=200 posts=60 videos=42 (no_link=0) | rejected: old=0 done=14 bad_length=3 low_views=3 no_laugh=21 | OK=1 | best_video_views=26200 newest=2026-09-21
+13 candidate videos
+trying keereker/255581 (7700 views)
+[0;93m2026-09-21 19:35:53.639022443 [W:onnxruntime:Default, device_discovery.cc:146 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
+  translate error (gtx, try 1): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
+  translate error (gtx, try 2): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
+  translated with mymemory
+  speech found (lang=ar), subtitles burned
   translate error (gtx, try 1): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
   translate error (gtx, try 2): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
   translated with mymemory
