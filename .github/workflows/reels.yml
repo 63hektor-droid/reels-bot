@@ -39,7 +39,7 @@ jobs:
       - name: Install Python packages
         run: pip install -r requirements.txt
 
-      - - name: Run bot
+      - name: Run bot
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
         run: |
