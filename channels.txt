@@ -1,14 +1,9 @@
 # Funny animals (need a laughing emoji in the post text)
-lolanimalz
 funnyanimals_t_me
 animals_funny_videos
 funny1pet
 you_can_pet
 cutehappystuffs
-funny_memes_jokes_english_gifs
-chicomemes
-plantainchipps
-discovery_animal_planet
 
 # Nature (no laughing emoji needed)
 nature nolaugh
@@ -16,6 +11,3 @@ tgrealnature nolaugh
 
 # Persian funny: about 190K subscribers, about 25K views per post (need a laughing emoji)
 keereker
-
-# Persian motivational: about 4.5K subscribers, about 11-20K views per post (no laughing emoji needed)
-angize123 nolaugh
