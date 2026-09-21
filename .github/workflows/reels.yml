@@ -33,14 +33,13 @@ jobs:
       - name: Run bot
         run: python bot.py
         env:
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-          IG_COOKIES: ${{ secrets.IG_COOKIES }}
+  TELEGRAM_BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
 
       - name: Save posted list
         run: |
           git config user.name "bot"
           git config user.email "bot@users.noreply.github.com"
-          git add Posted json|| true
+          git add posted.json || true
           git add log.txt|| true
           git commit -m "update posted" || true
           git push || true
