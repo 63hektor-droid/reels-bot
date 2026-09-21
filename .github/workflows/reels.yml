@@ -42,7 +42,7 @@ jobs:
       - name: Run bot
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-          MIN_VIEWS: "10000"
+          MIN_VIEWS: "5000"
           MAX_AGE_DAYS: "14"
         run: |
           set -o pipefail
