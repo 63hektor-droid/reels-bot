@@ -39,14 +39,18 @@ jobs:
       - name: Install Python packages
         run: pip install -r requirements.txt
 
-      - name: Run bot
+      - - name: Run bot
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-        run: python bot.py
+        run: |
+          set -o pipefail
+          python -u bot.py 2>&1 | tee log.txt
 
       - name: Save posted list
+        if: always()
         run: |
           git config user.name "reels-bot"
           git config user.email "reels-bot@users.noreply.github.com"
+          git add log.txt || true
           git add posted.json || true
           git diff --cached --quiet || (git commit -m "update posted list" && git push)
