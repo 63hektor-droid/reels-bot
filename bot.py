@@ -3,7 +3,8 @@
 
 Every run:
 1. reads the public Telegram channels in channels.txt (t.me/s/<name> web preview),
-2. keeps recent videos that have at least MIN_VIEWS views,
+2. keeps recent videos that have at least MIN_VIEWS views and (unless REQUIRE_LAUGH=0)
+   a laughing emoji in the post text,
 3. downloads the best one; if it has speech, transcribes it, translates to Persian
    and burns subtitles,
 4. posts it to our channel and remembers it in posted.json.
@@ -36,6 +37,13 @@ MIN_DURATION = 3
 MAX_MB = 45                                                  # bot upload limit is 50 MB
 WHISPER_MODEL = os.environ.get("WHISPER_MODEL") or "small"
 TRIES_PER_RUN = 5
+DOWNLOAD_TRIES = 3                                           # retries for temporary download errors
+# Only post videos whose text contains a laughing emoji (funny videos).
+REQUIRE_LAUGH = (os.environ.get("REQUIRE_LAUGH") or "1").strip() not in ("0", "false", "no")
+# Channels that are allowed without a laughing emoji, e.g. LAUGH_EXEMPT="nature,tgrealnature"
+LAUGH_EXEMPT = {c.strip().lstrip("@").lower()
+                for c in (os.environ.get("LAUGH_EXEMPT") or "").split(",") if c.strip()}
+LAUGH_RE = re.compile("[😂🤣😹😆😄😁😀😅😃😸😺😝😜🤪]")
 STATE_FILE = Path("posted.json")
 UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120 Safari/537.36"}
 
@@ -144,7 +152,8 @@ def find_candidates(channels, state):
         except Exception as e:
             print(f"[{ch}] fetch failed: {e}")
             continue
-        c = dict(videos=0, no_src=0, old=0, done=0, long=0, low=0, ok=0)
+        c = dict(videos=0, no_src=0, old=0, done=0, long=0, low=0, nolaugh=0, ok=0)
+        need_laugh = REQUIRE_LAUGH and ch.lower() not in LAUGH_EXEMPT
         best = 0
         newest = None
         for p in posts:
@@ -164,13 +173,15 @@ def find_candidates(channels, state):
                 c["long"] += 1
             elif p["views"] < MIN_VIEWS:
                 c["low"] += 1
+            elif need_laugh and not LAUGH_RE.search(p["text"] or ""):
+                c["nolaugh"] += 1
             else:
                 c["ok"] += 1
                 found.append(p)
         print(
             f"[{ch}] http={status} posts={len(posts)} videos={c['videos']} "
             f"(no_link={c['no_src']}) | rejected: old={c['old']} done={c['done']} "
-            f"bad_length={c['long']} low_views={c['low']} | OK={c['ok']} | "
+            f"bad_length={c['long']} low_views={c['low']} no_laugh={c['nolaugh']} | OK={c['ok']} | "
             f"best_video_views={best} newest={newest.date() if newest else '-'}"
         )
     found.sort(key=lambda p: p["views"], reverse=True)
@@ -185,7 +196,7 @@ def run(cmd, cwd=None):
     return r.stdout
 
 
-def download(url, dest):
+def _download_once(url, dest):
     size = 0
     with requests.get(url, headers=UA, stream=True, timeout=60) as r:
         r.raise_for_status()
@@ -195,6 +206,25 @@ def download(url, dest):
                 if size > MAX_MB * 1024 * 1024:
                     raise Skip("file too big")
                 f.write(chunk)
+
+
+def download(url, dest, tries=DOWNLOAD_TRIES):
+    """Downloads with retries for temporary errors (5xx, timeouts, dropped connections)."""
+    last = None
+    for attempt in range(1, tries + 1):
+        try:
+            _download_once(url, dest)
+            return
+        except Skip:
+            raise
+        except requests.RequestException as e:
+            last = e
+            code = getattr(e.response, "status_code", 0) or 0
+            print(f"  download error (try {attempt}/{tries}): {str(e)[:80]}")
+            if 400 <= code < 500:  # expired link, forbidden, ...: retrying will not help
+                break
+            time.sleep(3 * attempt)
+    raise last
 
 
 def video_duration(path):
@@ -395,11 +425,16 @@ def main():
     if not TOKEN:
         raise SystemExit("TELEGRAM_BOT_TOKEN is not set (check the secret name in reels.yml)")
     print(f"settings: MIN_VIEWS={MIN_VIEWS} MAX_AGE_DAYS={MAX_AGE_DAYS} PAGES={PAGES} target={TARGET}")
-    channels = [
-        line.strip().lstrip("@")
-        for line in Path("channels.txt").read_text().splitlines()
-        if line.strip() and not line.strip().startswith("#")
-    ]
+    channels = []
+    for line in Path("channels.txt").read_text().splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        parts = line.split()
+        name = parts[0].lstrip("@")
+        channels.append(name)
+        if "nolaugh" in [x.lower() for x in parts[1:]]:
+            LAUGH_EXEMPT.add(name.lower())  # e.g. motivational channels
     state = load_state()
     candidates = find_candidates(channels, state)
     print(f"{len(candidates)} candidate videos")
