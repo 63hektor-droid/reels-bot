@@ -141,7 +141,9 @@ def find_candidates(channels, state):
                 p["ratio"] = ratio
                 found.append(p)
                 n += 1
-        print(f"[{ch}] median views {int(base)}, candidates {n}")
+        vids = [p for p in posts if p["video_url"]]
+        best = max([p["views"] for p in vids], default=0) / base
+        print(f"[{ch}] posts {len(posts)}, videos {len(vids)}, median {int(base)}, best video {best:.1f}x, candidates {n}")
     found.sort(key=lambda p: p["ratio"], reverse=True)
     return found
 
