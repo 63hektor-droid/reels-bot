@@ -1,4 +1,4 @@
-settings: MIN_VIEWS=10000 MAX_AGE_DAYS=14 PAGES=3 target=@my_reels_fa
+settings: MIN_VIEWS=5000 MAX_AGE_DAYS=14 PAGES=3 target=@my_reels_fa
 [lolanimalz] http=200 posts=54 videos=45 (no_link=7) | rejected: old=45 done=0 bad_length=0 low_views=0 | OK=0 | best_video_views=8480 newest=2026-04-25
 [funnyanimals_t_me] http=200 posts=60 videos=59 (no_link=1) | rejected: old=47 done=0 bad_length=0 low_views=12 | OK=0 | best_video_views=4580 newest=2026-09-20
 [animals_funny_videos] http=200 posts=60 videos=58 (no_link=1) | rejected: old=57 done=0 bad_length=0 low_views=1 | OK=0 | best_video_views=2910 newest=2026-09-08
@@ -8,8 +8,25 @@ settings: MIN_VIEWS=10000 MAX_AGE_DAYS=14 PAGES=3 target=@my_reels_fa
 [funny_memes_jokes_english_gifs] http=200 posts=60 videos=0 (no_link=0) | rejected: old=0 done=0 bad_length=0 low_views=0 | OK=0 | best_video_views=0 newest=2026-07-07
 [chicomemes] http=200 posts=2 videos=0 (no_link=0) | rejected: old=0 done=0 bad_length=0 low_views=0 | OK=0 | best_video_views=0 newest=2026-09-20
 [plantainchipps] http=200 posts=60 videos=1 (no_link=0) | rejected: old=0 done=1 bad_length=0 low_views=0 | OK=0 | best_video_views=10500 newest=2026-09-21
-[nature] http=200 posts=60 videos=60 (no_link=0) | rejected: old=0 done=0 bad_length=0 low_views=60 | OK=0 | best_video_views=5480 newest=2026-09-21
-[tgrealnature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=48 done=0 bad_length=0 low_views=11 | OK=0 | best_video_views=7800 newest=2026-09-20
+[nature] http=200 posts=60 videos=60 (no_link=0) | rejected: old=0 done=0 bad_length=0 low_views=48 | OK=12 | best_video_views=5480 newest=2026-09-21
+[tgrealnature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=48 done=0 bad_length=0 low_views=10 | OK=1 | best_video_views=7800 newest=2026-09-20
 [discovery_animal_planet] http=200 posts=18 videos=1 (no_link=0) | rejected: old=0 done=0 bad_length=0 low_views=1 | OK=0 | best_video_views=174 newest=2026-09-21
-0 candidate videos
-nothing posted this run
+13 candidate videos
+trying tgrealnature/5788 (5520 views)
+  failed (1): 500 Server Error: Internal Server Error for url: https://cdn4.telesco.pe/file/37cc1014c0.mp4?token=YerXNOo1KxF_L4q3yobTP-xvGJVbWexsgb2T0RGx1O6ts4UuAFVWoqI4WfqxQwd3lmC9hPuxDawcKWf3vsK4SjfSygrB4nBl6eqfylfKx5-fIeqSolCH1Cu2WZ21omi6LZQaAK_3kqkemNMWV2dQIYNKEMA3LKHy8xxaI4_9LUZNk8EBzE4N9y947Z_YL5sJFXbxuHgN9PFwhAx3juo2iaoDybY4_mNrUjOmdUWTpcq_T9rJsEVHUwlxf0MIOPz69Bv-YzoVSQArABbZKS_zjuctvOOYr4kwCo0xUlqAW8-2-jHvgJl3l8RQUqJR2zFrCupaIZLc-y5jnIyI-t3y7w
+Traceback (most recent call last):
+  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 412, in main
+    process(p)
+  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 375, in process
+    download(p["video_url"], src)
+  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 191, in download
+    r.raise_for_status()
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/requests/models.py", line 1167, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: https://cdn4.telesco.pe/file/37cc1014c0.mp4?token=YerXNOo1KxF_L4q3yobTP-xvGJVbWexsgb2T0RGx1O6ts4UuAFVWoqI4WfqxQwd3lmC9hPuxDawcKWf3vsK4SjfSygrB4nBl6eqfylfKx5-fIeqSolCH1Cu2WZ21omi6LZQaAK_3kqkemNMWV2dQIYNKEMA3LKHy8xxaI4_9LUZNk8EBzE4N9y947Z_YL5sJFXbxuHgN9PFwhAx3juo2iaoDybY4_mNrUjOmdUWTpcq_T9rJsEVHUwlxf0MIOPz69Bv-YzoVSQArABbZKS_zjuctvOOYr4kwCo0xUlqAW8-2-jHvgJl3l8RQUqJR2zFrCupaIZLc-y5jnIyI-t3y7w
+trying nature/20268 (5480 views)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[0;93m2026-09-21 09:28:07.088963922 [W:onnxruntime:Default, device_discovery.cc:146 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
+  no speech, posting without subtitles
+  translated with gtx
+  posted
