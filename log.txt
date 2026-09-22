@@ -6,11 +6,11 @@ settings: MIN_VIEWS=5000 MAX_AGE_DAYS=14 PAGES=3 target=@my_reels_fa
 [cutehappystuffs] http=200 posts=57 videos=29 (no_link=0) | rejected: old=0 done=0 bad_length=1 low_views=28 no_laugh=0 | OK=0 | best_video_views=4270 newest=2026-09-21
 [nature] http=200 posts=60 videos=60 (no_link=0) | rejected: old=0 done=8 bad_length=0 low_views=48 no_laugh=0 | OK=4 | best_video_views=5540 newest=2026-09-21
 [tgrealnature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=47 done=1 bad_length=0 low_views=11 no_laugh=0 | OK=0 | best_video_views=7810 newest=2026-09-21
-[keereker] http=200 posts=60 videos=40 (no_link=0) | rejected: old=0 done=12 bad_length=3 low_views=0 no_laugh=24 | OK=1 | best_video_views=26500 newest=2026-09-21
-5 candidate videos
-trying keereker/255593 (5860 views)
-[0;93m2026-09-22 00:04:03.124851224 [W:onnxruntime:Default, device_discovery.cc:146 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
-  speech found (lang=fa), subtitles burned
+[keereker] http=200 posts=60 videos=40 (no_link=0) | rejected: old=0 done=13 bad_length=3 low_views=0 no_laugh=24 | OK=0 | best_video_views=26500 newest=2026-09-21
+4 candidate videos
+trying nature/20264 (5110 views)
+[0;93m2026-09-22 00:42:09.149227998 [W:onnxruntime:Default, device_discovery.cc:146 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
+  no speech, posting without subtitles
   translate error (gtx, try 1): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
   translate error (gtx, try 2): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
   translated with mymemory
