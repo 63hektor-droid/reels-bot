@@ -6,12 +6,6 @@ settings: MIN_VIEWS=5000 MAX_AGE_DAYS=14 PAGES=3 target=@my_reels_fa
 [cutehappystuffs] http=200 posts=59 videos=28 (no_link=1) | rejected: old=0 done=0 bad_length=1 low_views=27 no_laugh=0 | OK=0 | best_video_views=3680 newest=2026-09-23
 [nature] http=200 posts=60 videos=60 (no_link=0) | rejected: old=0 done=10 bad_length=0 low_views=50 no_laugh=0 | OK=0 | best_video_views=5570 newest=2026-09-23
 [tgrealnature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=46 done=1 bad_length=0 low_views=12 no_laugh=0 | OK=0 | best_video_views=7830 newest=2026-09-22
-[keereker] http=200 posts=60 videos=44 (no_link=0) | rejected: old=0 done=15 bad_length=3 low_views=5 no_laugh=20 | OK=1 | best_video_views=25900 newest=2026-09-23
-1 candidate videos
-trying keereker/255636 (5170 views)
-[0;93m2026-09-23 07:37:17.576484749 [W:onnxruntime:Default, device_discovery.cc:146 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
-  speech found (lang=fa), subtitles burned
-  translate error (gtx, try 1): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
-  translate error (gtx, try 2): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
-  translated with mymemory
-  posted
+[keereker] http=200 posts=60 videos=44 (no_link=0) | rejected: old=0 done=16 bad_length=3 low_views=5 no_laugh=20 | OK=0 | best_video_views=26000 newest=2026-09-23
+0 candidate videos
+nothing posted this run
