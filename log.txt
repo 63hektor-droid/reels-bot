@@ -6,10 +6,10 @@ settings: MIN_VIEWS=5000 MAX_AGE_DAYS=14 PAGES=3 target=@my_reels_fa
 [cutehappystuffs] http=200 posts=59 videos=28 (no_link=1) | rejected: old=0 done=0 bad_length=0 low_views=28 no_laugh=0 | OK=0 | best_video_views=3620 newest=2026-09-24
 [nature] http=200 posts=60 videos=60 (no_link=0) | rejected: old=0 done=10 bad_length=0 low_views=48 no_laugh=0 | OK=2 | best_video_views=5510 newest=2026-09-24
 [tgrealnature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=46 done=2 bad_length=0 low_views=11 no_laugh=0 | OK=0 | best_video_views=7850 newest=2026-09-22
-[keereker] http=200 posts=60 videos=45 (no_link=1) | rejected: old=0 done=21 bad_length=2 low_views=3 no_laugh=18 | OK=1 | best_video_views=25800 newest=2026-09-24
-3 candidate videos
-trying keereker/255684 (5860 views)
-[0;93m2026-09-24 11:36:42.959634529 [W:onnxruntime:Default, device_discovery.cc:146 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
+[keereker] http=200 posts=60 videos=45 (no_link=1) | rejected: old=0 done=20 bad_length=2 low_views=3 no_laugh=18 | OK=2 | best_video_views=24500 newest=2026-09-24
+4 candidate videos
+trying keereker/255691 (6970 views)
+[0;93m2026-09-24 12:03:26.754882697 [W:onnxruntime:Default, device_discovery.cc:146 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
   speech found (lang=fa), subtitles burned
   translate error (gtx, try 1): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
   translate error (gtx, try 2): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
