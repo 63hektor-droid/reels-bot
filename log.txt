@@ -6,6 +6,12 @@ settings: MIN_VIEWS=5000 MAX_AGE_DAYS=14 PAGES=3 target=@my_reels_fa
 [cutehappystuffs] http=200 posts=59 videos=29 (no_link=1) | rejected: old=0 done=0 bad_length=0 low_views=29 no_laugh=0 | OK=0 | best_video_views=3670 newest=2026-09-25
 [nature] http=200 posts=60 videos=60 (no_link=0) | rejected: old=0 done=13 bad_length=0 low_views=47 no_laugh=0 | OK=0 | best_video_views=5920 newest=2026-09-25
 [tgrealnature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=44 done=3 bad_length=0 low_views=12 no_laugh=0 | OK=0 | best_video_views=7870 newest=2026-09-25
-[keereker] http=200 posts=59 videos=45 (no_link=2) | rejected: old=0 done=16 bad_length=5 low_views=7 no_laugh=17 | OK=0 | best_video_views=25200 newest=2026-09-25
-0 candidate videos
-nothing posted this run
+[keereker] http=200 posts=59 videos=42 (no_link=1) | rejected: old=0 done=13 bad_length=5 low_views=6 no_laugh=17 | OK=1 | best_video_views=25200 newest=2026-09-25
+1 candidate videos
+trying keereker/255748 (5030 views)
+[0;93m2026-09-25 19:03:48.003613954 [W:onnxruntime:Default, device_discovery.cc:146 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
+  no speech, posting without subtitles
+  translate error (gtx, try 1): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
+  translate error (gtx, try 2): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
+  translated with mymemory
+  posted
