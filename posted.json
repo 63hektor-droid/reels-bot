@@ -106,13 +106,14 @@
   "keereker/255728",
   "nature/20305",
   "keereker/255738",
-  "nature/20307"
+  "nature/20307",
+  "nature/20308"
  ],
  "fails": {
   "plantainchipps/18469": 3,
   "tgrealnature/5788": 1,
   "nature/20265": 3,
   "nature/20272": 3,
-  "nature/20308": 2
+  "nature/20308": 3
  }
 }
