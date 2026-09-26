@@ -3,9 +3,9 @@ settings: MIN_VIEWS=5000 MAX_AGE_DAYS=14 PAGES=3 target=@my_reels_fa
 [animals_funny_videos] http=200 posts=60 videos=58 (no_link=1) | rejected: old=58 done=0 bad_length=0 low_views=0 no_laugh=0 | OK=0 | best_video_views=3180 newest=2026-09-08
 [funny1pet] http=200 posts=59 videos=39 (no_link=12) | rejected: old=35 done=0 bad_length=0 low_views=4 no_laugh=0 | OK=0 | best_video_views=5610 newest=2026-09-26
 [you_can_pet] http=200 posts=57 videos=53 (no_link=0) | rejected: old=46 done=0 bad_length=0 low_views=7 no_laugh=0 | OK=0 | best_video_views=11100 newest=2026-09-24
-[cutehappystuffs] http=200 posts=58 videos=28 (no_link=1) | rejected: old=0 done=0 bad_length=0 low_views=28 no_laugh=0 | OK=0 | best_video_views=3390 newest=2026-09-26
-[nature] http=200 posts=60 videos=60 (no_link=0) | rejected: old=0 done=17 bad_length=0 low_views=43 no_laugh=0 | OK=0 | best_video_views=6010 newest=2026-09-26
+[cutehappystuffs] http=200 posts=58 videos=28 (no_link=1) | rejected: old=0 done=0 bad_length=0 low_views=28 no_laugh=0 | OK=0 | best_video_views=3400 newest=2026-09-26
+[nature] http=200 posts=60 videos=60 (no_link=0) | rejected: old=0 done=17 bad_length=0 low_views=43 no_laugh=0 | OK=0 | best_video_views=6020 newest=2026-09-26
 [tgrealnature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=44 done=4 bad_length=0 low_views=11 no_laugh=0 | OK=0 | best_video_views=7880 newest=2026-09-25
-[keereker] http=200 posts=60 videos=41 (no_link=0) | rejected: old=0 done=15 bad_length=3 low_views=7 no_laugh=16 | OK=0 | best_video_views=26800 newest=2026-09-26
+[keereker] http=200 posts=60 videos=42 (no_link=0) | rejected: old=0 done=15 bad_length=3 low_views=6 no_laugh=18 | OK=0 | best_video_views=26800 newest=2026-09-26
 0 candidate videos
 nothing posted this run
