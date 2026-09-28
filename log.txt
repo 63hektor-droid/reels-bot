@@ -6,6 +6,6 @@ settings: MIN_VIEWS=5000 MAX_AGE_DAYS=14 PAGES=3 target=@my_reels_fa
 [cutehappystuffs] http=200 posts=56 videos=26 (no_link=1) | rejected: old=0 done=0 bad_length=0 low_views=26 no_laugh=0 | OK=0 | best_video_views=3660 newest=2026-09-27
 [nature] http=200 posts=60 videos=60 (no_link=0) | rejected: old=0 done=11 bad_length=0 low_views=49 no_laugh=0 | OK=0 | best_video_views=6310 newest=2026-09-27
 [tgrealnature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=43 done=4 bad_length=0 low_views=12 no_laugh=0 | OK=0 | best_video_views=7900 newest=2026-09-27
-[keereker] http=200 posts=60 videos=40 (no_link=1) | rejected: old=0 done=21 bad_length=0 low_views=0 no_laugh=19 | OK=0 | best_video_views=24800 newest=2026-09-27
+[keereker] http=200 posts=60 videos=40 (no_link=1) | rejected: old=0 done=21 bad_length=0 low_views=0 no_laugh=19 | OK=0 | best_video_views=25500 newest=2026-09-27
 0 candidate videos
 nothing posted this run
