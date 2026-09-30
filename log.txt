@@ -6,10 +6,10 @@ settings: MIN_VIEWS=5000 MAX_AGE_DAYS=14 PAGES=3 target=@my_reels_fa
 [cutehappystuffs] http=200 posts=56 videos=25 (no_link=1) | rejected: old=0 done=0 bad_length=0 low_views=25 no_laugh=0 | OK=0 | best_video_views=4150 newest=2026-09-30
 [nature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=0 done=5 bad_length=0 low_views=54 no_laugh=0 | OK=0 | best_video_views=6070 newest=2026-09-30
 [tgrealnature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=42 done=4 bad_length=0 low_views=13 no_laugh=0 | OK=0 | best_video_views=7940 newest=2026-09-29
-[keereker] http=200 posts=60 videos=39 (no_link=2) | rejected: old=0 done=14 bad_length=1 low_views=7 no_laugh=16 | OK=1 | best_video_views=34000 newest=2026-09-30
-1 candidate videos
-trying keereker/255961 (5330 views)
-[0;93m2026-09-30 11:04:34.673833225 [W:onnxruntime:Default, device_discovery.cc:146 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
-  no speech, posting without subtitles
+[keereker] http=200 posts=60 videos=45 (no_link=2) | rejected: old=0 done=18 bad_length=1 low_views=3 no_laugh=21 | OK=2 | best_video_views=26000 newest=2026-09-30
+2 candidate videos
+trying keereker/255967 (6900 views)
+[0;93m2026-09-30 11:37:41.758302377 [W:onnxruntime:Default, device_discovery.cc:146 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
+  speech found (lang=fa), subtitles burned
   translated with gtx
   posted
