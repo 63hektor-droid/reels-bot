@@ -3,19 +3,18 @@ settings: MIN_VIEWS=5000 MAX_AGE_DAYS=14 PAGES=3 target=@my_reels_fa
 [animals_funny_videos] http=200 posts=60 videos=58 (no_link=1) | rejected: old=58 done=0 bad_length=0 low_views=0 no_laugh=0 | OK=0 | best_video_views=3510 newest=2026-09-08
 [funny1pet] http=200 posts=59 videos=36 (no_link=13) | rejected: old=34 done=0 bad_length=0 low_views=2 no_laugh=0 | OK=0 | best_video_views=5630 newest=2026-09-29
 [you_can_pet] http=200 posts=57 videos=54 (no_link=0) | rejected: old=48 done=0 bad_length=0 low_views=6 no_laugh=0 | OK=0 | best_video_views=11100 newest=2026-09-28
-[cutehappystuffs] http=200 posts=56 videos=24 (no_link=0) | rejected: old=0 done=0 bad_length=0 low_views=24 no_laugh=0 | OK=0 | best_video_views=4590 newest=2026-10-02
-[nature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=0 done=7 bad_length=0 low_views=52 no_laugh=0 | OK=0 | best_video_views=5400 newest=2026-10-02
-[tgrealnature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=44 done=4 bad_length=0 low_views=11 no_laugh=0 | OK=0 | best_video_views=7970 newest=2026-09-30
-[keereker] http=200 posts=58 videos=42 (no_link=1) | rejected: old=0 done=13 bad_length=0 low_views=5 no_laugh=22 | OK=2 | best_video_views=26300 newest=2026-10-02
+[cutehappystuffs] http=200 posts=56 videos=24 (no_link=0) | rejected: old=0 done=0 bad_length=0 low_views=24 no_laugh=0 | OK=0 | best_video_views=4600 newest=2026-10-02
+[nature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=0 done=7 bad_length=0 low_views=52 no_laugh=0 | OK=0 | best_video_views=5410 newest=2026-10-02
+[tgrealnature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=45 done=4 bad_length=0 low_views=10 no_laugh=0 | OK=0 | best_video_views=7970 newest=2026-09-30
+[keereker] http=200 posts=58 videos=42 (no_link=1) | rejected: old=0 done=13 bad_length=0 low_views=3 no_laugh=24 | OK=2 | best_video_views=26300 newest=2026-10-02
 2 candidate videos
-trying keereker/256066 (5350 views)
-  download error (try 1/3): 500 Server Error: Internal Server Error for url: https://cdn4.telesco.pe/file/e7
-[0;93m2026-10-02 10:39:07.556425467 [W:onnxruntime:Default, device_discovery.cc:146 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
+trying keereker/256066 (5720 views)
+[0;93m2026-10-02 11:04:08.740659912 [W:onnxruntime:Default, device_discovery.cc:146 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
   speech found (lang=fa), subtitles burned
   translate error (gtx, try 1): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
   translate error (gtx, try 2): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
   translated with mymemory
-  failed (1): Telegram error: {"ok":false,"error_code":403,"description":"Forbidden: bot was kicked from the channel chat"}
+  failed (2): Telegram error: {"ok":false,"error_code":403,"description":"Forbidden: bot was kicked from the channel chat"}
 Traceback (most recent call last):
   File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
     process(p)
@@ -24,12 +23,12 @@ Traceback (most recent call last):
   File "/home/runner/work/reels-bot/reels-bot/bot.py", line 398, in send_video
     raise RuntimeError(f"Telegram error: {r.text[:300]}")
 RuntimeError: Telegram error: {"ok":false,"error_code":403,"description":"Forbidden: bot was kicked from the channel chat"}
-trying keereker/256065 (5210 views)
-  no speech, posting without subtitles
+trying keereker/256065 (5510 views)
+  speech found (lang=fa), subtitles burned
   translate error (gtx, try 1): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
   translate error (gtx, try 2): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
   translated with mymemory
-  failed (1): Telegram error: {"ok":false,"error_code":403,"description":"Forbidden: bot was kicked from the channel chat"}
+  failed (2): Telegram error: {"ok":false,"error_code":403,"description":"Forbidden: bot was kicked from the channel chat"}
 Traceback (most recent call last):
   File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
     process(p)
