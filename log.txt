@@ -3,38 +3,9 @@ settings: MIN_VIEWS=5000 MAX_AGE_DAYS=14 PAGES=3 target=@my_reels_fa
 [animals_funny_videos] http=200 posts=60 videos=58 (no_link=1) | rejected: old=58 done=0 bad_length=0 low_views=0 no_laugh=0 | OK=0 | best_video_views=3540 newest=2026-09-08
 [funny1pet] http=200 posts=58 videos=34 (no_link=14) | rejected: old=32 done=0 bad_length=0 low_views=2 no_laugh=0 | OK=0 | best_video_views=5630 newest=2026-10-03
 [you_can_pet] http=200 posts=57 videos=54 (no_link=0) | rejected: old=48 done=0 bad_length=0 low_views=6 no_laugh=0 | OK=0 | best_video_views=11100 newest=2026-09-28
-[cutehappystuffs] http=200 posts=56 videos=25 (no_link=0) | rejected: old=0 done=0 bad_length=0 low_views=25 no_laugh=0 | OK=0 | best_video_views=4700 newest=2026-10-02
-[nature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=0 done=9 bad_length=0 low_views=49 no_laugh=0 | OK=1 | best_video_views=5480 newest=2026-10-02
+[cutehappystuffs] http=200 posts=57 videos=26 (no_link=0) | rejected: old=0 done=0 bad_length=0 low_views=26 no_laugh=0 | OK=0 | best_video_views=4700 newest=2026-10-03
+[nature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=0 done=10 bad_length=0 low_views=49 no_laugh=0 | OK=0 | best_video_views=5480 newest=2026-10-02
 [tgrealnature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=45 done=4 bad_length=0 low_views=10 no_laugh=0 | OK=0 | best_video_views=7980 newest=2026-10-02
-[keereker] http=200 posts=59 videos=46 (no_link=1) | rejected: old=0 done=16 bad_length=0 low_views=3 no_laugh=26 | OK=1 | best_video_views=25700 newest=2026-10-02
-2 candidate videos
-trying keereker/256100 (5010 views)
-[0;93m2026-10-03 00:03:31.823215367 [W:onnxruntime:Default, device_discovery.cc:146 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
-  no speech, posting without subtitles
-  translate error (gtx, try 1): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
-  translate error (gtx, try 2): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
-  translated with mymemory
-  failed (3): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
-Traceback (most recent call last):
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
-    process(p)
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 421, in process
-    send_video(final, build_caption(clean_caption(p["text"]), p["channel"]))
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 398, in send_video
-    raise RuntimeError(f"Telegram error: {r.text[:300]}")
-RuntimeError: Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
-trying nature/20377 (5000 views)
-  no speech, posting without subtitles
-  translate error (gtx, try 1): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
-  translate error (gtx, try 2): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
-  translated with mymemory
-  failed (3): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
-Traceback (most recent call last):
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
-    process(p)
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 421, in process
-    send_video(final, build_caption(clean_caption(p["text"]), p["channel"]))
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 398, in send_video
-    raise RuntimeError(f"Telegram error: {r.text[:300]}")
-RuntimeError: Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+[keereker] http=200 posts=59 videos=46 (no_link=1) | rejected: old=0 done=17 bad_length=0 low_views=3 no_laugh=26 | OK=0 | best_video_views=25700 newest=2026-10-02
+0 candidate videos
 nothing posted this run
