@@ -256,7 +256,9 @@
   "keereker/256185",
   "nature/20373",
   "keereker/256188",
-  "nature/20360"
+  "nature/20360",
+  "nature/20386",
+  "nature/20361"
  ],
  "fails": {
   "plantainchipps/18469": 3,
@@ -300,7 +302,7 @@
   "keereker/256128": 3,
   "nature/20360": 3,
   "nature/20373": 3,
-  "nature/20361": 2,
+  "nature/20361": 3,
   "keereker/256136": 3,
   "keereker/256142": 3,
   "keereker/256141": 3,
@@ -312,7 +314,9 @@
   "keereker/256173": 3,
   "keereker/256185": 3,
   "keereker/256188": 3,
-  "nature/20386": 2,
-  "tgrealnature/5801": 1
+  "nature/20386": 3,
+  "tgrealnature/5801": 2,
+  "nature/20359": 1,
+  "nature/20368": 1
  }
 }
