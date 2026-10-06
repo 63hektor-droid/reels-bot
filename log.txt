@@ -6,35 +6,6 @@ settings: MIN_VIEWS=5000 MAX_AGE_DAYS=14 PAGES=3 target=@my_reels_fa
 [cutehappystuffs] http=200 posts=54 videos=28 (no_link=0) | rejected: old=0 done=0 bad_length=0 low_views=27 no_laugh=1 | OK=0 | best_video_views=5040 newest=2026-10-05
 [nature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=0 done=10 bad_length=0 low_views=49 no_laugh=0 | OK=0 | best_video_views=6300 newest=2026-10-05
 [tgrealnature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=46 done=5 bad_length=0 low_views=8 no_laugh=0 | OK=0 | best_video_views=8020 newest=2026-10-05
-[keereker] http=200 posts=60 videos=48 (no_link=1) | rejected: old=0 done=19 bad_length=0 low_views=0 no_laugh=27 | OK=2 | best_video_views=25800 newest=2026-10-05
-2 candidate videos
-trying keereker/256233 (5850 views)
-[0;93m2026-10-06 00:49:06.884964723 [W:onnxruntime:Default, device_discovery.cc:146 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
-  no speech, posting without subtitles
-  translate error (gtx, try 1): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
-  translate error (gtx, try 2): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
-  translated with mymemory
-  failed (3): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
-Traceback (most recent call last):
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
-    process(p)
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 421, in process
-    send_video(final, build_caption(clean_caption(p["text"]), p["channel"]))
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 398, in send_video
-    raise RuntimeError(f"Telegram error: {r.text[:300]}")
-RuntimeError: Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
-trying keereker/256234 (5740 views)
-  no speech, posting without subtitles
-  translate error (gtx, try 1): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
-  translate error (gtx, try 2): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
-  translated with mymemory
-  failed (3): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
-Traceback (most recent call last):
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
-    process(p)
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 421, in process
-    send_video(final, build_caption(clean_caption(p["text"]), p["channel"]))
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 398, in send_video
-    raise RuntimeError(f"Telegram error: {r.text[:300]}")
-RuntimeError: Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+[keereker] http=200 posts=60 videos=48 (no_link=1) | rejected: old=0 done=21 bad_length=0 low_views=0 no_laugh=27 | OK=0 | best_video_views=25800 newest=2026-10-05
+0 candidate videos
 nothing posted this run
