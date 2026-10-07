@@ -4,25 +4,13 @@ settings: MIN_VIEWS=5000 MAX_AGE_DAYS=14 PAGES=3 target=@my_reels_fa
 [funny1pet] http=200 posts=56 videos=33 (no_link=13) | rejected: old=30 done=0 bad_length=0 low_views=3 no_laugh=0 | OK=0 | best_video_views=5650 newest=2026-10-03
 [you_can_pet] http=200 posts=57 videos=54 (no_link=0) | rejected: old=52 done=0 bad_length=0 low_views=2 no_laugh=0 | OK=0 | best_video_views=11200 newest=2026-09-28
 [cutehappystuffs] http=200 posts=49 videos=27 (no_link=1) | rejected: old=0 done=0 bad_length=0 low_views=27 no_laugh=0 | OK=0 | best_video_views=4850 newest=2026-10-07
-[nature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=0 done=8 bad_length=0 low_views=50 no_laugh=0 | OK=1 | best_video_views=6540 newest=2026-10-07
-[tgrealnature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=46 done=5 bad_length=0 low_views=8 no_laugh=0 | OK=0 | best_video_views=8029 newest=2026-10-05
-[keereker] http=200 posts=60 videos=44 (no_link=2) | rejected: old=0 done=13 bad_length=1 low_views=5 no_laugh=24 | OK=1 | best_video_views=30800 newest=2026-10-07
-2 candidate videos
-trying keereker/256290 (5470 views)
-[0;93m2026-10-07 08:06:23.224687090 [W:onnxruntime:Default, device_discovery.cc:146 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
+[nature] http=200 posts=60 videos=58 (no_link=2) | rejected: old=0 done=9 bad_length=0 low_views=49 no_laugh=0 | OK=0 | best_video_views=6540 newest=2026-10-07
+[tgrealnature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=46 done=5 bad_length=0 low_views=8 no_laugh=0 | OK=0 | best_video_views=8039 newest=2026-10-05
+[keereker] http=200 posts=60 videos=44 (no_link=2) | rejected: old=0 done=13 bad_length=1 low_views=5 no_laugh=24 | OK=1 | best_video_views=34100 newest=2026-10-07
+1 candidate videos
+trying keereker/256290 (5560 views)
+[0;93m2026-10-07 08:42:24.417605843 [W:onnxruntime:Default, device_discovery.cc:146 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
   speech found (lang=fa), subtitles burned
-  translated with gtx
-  failed (2): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
-Traceback (most recent call last):
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
-    process(p)
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 421, in process
-    send_video(final, build_caption(clean_caption(p["text"]), p["channel"]))
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 398, in send_video
-    raise RuntimeError(f"Telegram error: {r.text[:300]}")
-RuntimeError: Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
-trying nature/20388 (5000 views)
-  no speech, posting without subtitles
   translated with gtx
   failed (3): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
 Traceback (most recent call last):
