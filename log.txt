@@ -1,11 +1,11 @@
 settings: MIN_VIEWS=5000 MAX_AGE_DAYS=14 PAGES=3 target=@my_reels_fa
 [funnyanimals_t_me] http=200 posts=60 videos=59 (no_link=1) | rejected: old=47 done=0 bad_length=0 low_views=12 no_laugh=0 | OK=0 | best_video_views=4790 newest=2026-10-06
 [animals_funny_videos] http=200 posts=60 videos=58 (no_link=1) | rejected: old=58 done=0 bad_length=0 low_views=0 no_laugh=0 | OK=0 | best_video_views=3800 newest=2026-09-08
-[funny1pet] fetch failed: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[funny1pet] http=200 posts=56 videos=33 (no_link=13) | rejected: old=30 done=0 bad_length=0 low_views=3 no_laugh=0 | OK=0 | best_video_views=5650 newest=2026-10-03
 [you_can_pet] http=200 posts=57 videos=54 (no_link=0) | rejected: old=52 done=0 bad_length=0 low_views=2 no_laugh=0 | OK=0 | best_video_views=11200 newest=2026-09-28
-[cutehappystuffs] http=200 posts=47 videos=27 (no_link=1) | rejected: old=0 done=0 bad_length=0 low_views=27 no_laugh=0 | OK=0 | best_video_views=3630 newest=2026-10-07
-[nature] http=200 posts=60 videos=58 (no_link=2) | rejected: old=0 done=9 bad_length=0 low_views=49 no_laugh=0 | OK=0 | best_video_views=6580 newest=2026-10-07
+[cutehappystuffs] http=200 posts=47 videos=27 (no_link=1) | rejected: old=0 done=0 bad_length=0 low_views=27 no_laugh=0 | OK=0 | best_video_views=3640 newest=2026-10-07
+[nature] http=200 posts=60 videos=58 (no_link=2) | rejected: old=0 done=9 bad_length=0 low_views=49 no_laugh=0 | OK=0 | best_video_views=6590 newest=2026-10-07
 [tgrealnature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=46 done=6 bad_length=0 low_views=7 no_laugh=0 | OK=0 | best_video_views=8039 newest=2026-10-05
-[keereker] http=200 posts=60 videos=44 (no_link=2) | rejected: old=0 done=18 bad_length=1 low_views=0 no_laugh=25 | OK=0 | best_video_views=26100 newest=2026-10-07
+[keereker] http=200 posts=60 videos=44 (no_link=2) | rejected: old=0 done=18 bad_length=1 low_views=3 no_laugh=22 | OK=0 | best_video_views=25700 newest=2026-10-07
 0 candidate videos
 nothing posted this run
