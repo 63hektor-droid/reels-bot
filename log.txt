@@ -6,6 +6,19 @@ settings: MIN_VIEWS=5000 MAX_AGE_DAYS=14 PAGES=3 target=@my_reels_fa
 [cutehappystuffs] http=200 posts=51 videos=30 (no_link=1) | rejected: old=0 done=0 bad_length=0 low_views=30 no_laugh=0 | OK=0 | best_video_views=3450 newest=2026-10-08
 [nature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=0 done=5 bad_length=0 low_views=54 no_laugh=0 | OK=0 | best_video_views=6770 newest=2026-10-08
 [tgrealnature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=46 done=6 bad_length=0 low_views=7 no_laugh=0 | OK=0 | best_video_views=8050 newest=2026-10-08
-[keereker] http=200 posts=60 videos=44 (no_link=3) | rejected: old=0 done=21 bad_length=0 low_views=2 no_laugh=21 | OK=0 | best_video_views=26100 newest=2026-10-08
-0 candidate videos
+[keereker] http=200 posts=60 videos=44 (no_link=3) | rejected: old=0 done=21 bad_length=0 low_views=0 no_laugh=22 | OK=1 | best_video_views=26100 newest=2026-10-08
+1 candidate videos
+trying keereker/256364 (7220 views)
+[0;93m2026-10-08 20:41:36.427689667 [W:onnxruntime:Default, device_discovery.cc:146 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
+  no speech, posting without subtitles
+  translated with gtx
+  failed (1): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+Traceback (most recent call last):
+  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
+    process(p)
+  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 421, in process
+    send_video(final, build_caption(clean_caption(p["text"]), p["channel"]))
+  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 398, in send_video
+    raise RuntimeError(f"Telegram error: {r.text[:300]}")
+RuntimeError: Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
 nothing posted this run
