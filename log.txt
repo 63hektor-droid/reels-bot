@@ -6,13 +6,18 @@ settings: MIN_VIEWS=5000 MAX_AGE_DAYS=14 PAGES=3 target=@my_reels_fa
 [cutehappystuffs] http=200 posts=46 videos=25 (no_link=2) | rejected: old=0 done=0 bad_length=0 low_views=25 no_laugh=0 | OK=0 | best_video_views=3570 newest=2026-10-10
 [nature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=0 done=7 bad_length=0 low_views=52 no_laugh=0 | OK=0 | best_video_views=5880 newest=2026-10-10
 [tgrealnature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=44 done=7 bad_length=0 low_views=8 no_laugh=0 | OK=0 | best_video_views=8060 newest=2026-10-09
-[keereker] http=200 posts=60 videos=42 (no_link=3) | rejected: old=0 done=17 bad_length=1 low_views=3 no_laugh=20 | OK=1 | best_video_views=28200 newest=2026-10-10
+[keereker] http=200 posts=60 videos=41 (no_link=3) | rejected: old=0 done=18 bad_length=1 low_views=0 no_laugh=21 | OK=1 | best_video_views=28200 newest=2026-10-10
 1 candidate videos
-trying keereker/256416 (7630 views)
-[0;93m2026-10-10 08:03:51.879980131 [W:onnxruntime:Default, device_discovery.cc:95 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
+trying keereker/256424 (5670 views)
+[0;93m2026-10-10 08:40:06.577920901 [W:onnxruntime:Default, device_discovery.cc:95 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
   no speech, posting without subtitles
-  translated with gtx
-  failed (3): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+  translate error (gtx, try 1): 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?
+  translate error (gtx, try 2): 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?
+  translate error (mymemory, try 1): 429 Client Error: Too Many Requests for url: https://api.mymemory.translated.net
+  translate error (mymemory, try 2): 429 Client Error: Too Many Requests for url: https://api.mymemory.translated.net
+  translate error (google, try 1): Server Error: You made too many requests to the server.According to google, you 
+  translate error (google, try 2): Server Error: You made too many requests to the server.According to google, you 
+  failed (1): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
 Traceback (most recent call last):
   File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
     process(p)
