@@ -1,20 +1,34 @@
 settings: MIN_VIEWS=5000 MAX_AGE_DAYS=14 PAGES=3 target=@my_reels_fa
 [funnyanimals_t_me] http=200 posts=60 videos=59 (no_link=1) | rejected: old=47 done=0 bad_length=0 low_views=12 no_laugh=0 | OK=0 | best_video_views=4840 newest=2026-10-11
-[animals_funny_videos] http=200 posts=60 videos=58 (no_link=1) | rejected: old=57 done=0 bad_length=0 low_views=1 no_laugh=0 | OK=0 | best_video_views=4080 newest=2026-10-11
+[animals_funny_videos] http=200 posts=60 videos=58 (no_link=1) | rejected: old=57 done=0 bad_length=0 low_views=1 no_laugh=0 | OK=0 | best_video_views=4090 newest=2026-10-11
 [funny1pet] http=200 posts=52 videos=29 (no_link=13) | rejected: old=25 done=0 bad_length=0 low_views=4 no_laugh=0 | OK=0 | best_video_views=4160 newest=2026-10-09
 [you_can_pet] http=200 posts=57 videos=54 (no_link=0) | rejected: old=53 done=0 bad_length=0 low_views=1 no_laugh=0 | OK=0 | best_video_views=11300 newest=2026-09-28
 [cutehappystuffs] http=200 posts=51 videos=23 (no_link=2) | rejected: old=0 done=0 bad_length=0 low_views=23 no_laugh=0 | OK=0 | best_video_views=3640 newest=2026-10-11
 [nature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=0 done=5 bad_length=0 low_views=53 no_laugh=0 | OK=1 | best_video_views=5830 newest=2026-10-11
 [tgrealnature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=43 done=7 bad_length=0 low_views=9 no_laugh=0 | OK=0 | best_video_views=8070 newest=2026-10-11
-[keereker] http=200 posts=60 videos=49 (no_link=1) | rejected: old=0 done=14 bad_length=3 low_views=7 no_laugh=25 | OK=0 | best_video_views=26300 newest=2026-10-11
-1 candidate videos
-trying nature/20432 (5000 views)
-[0;93m2026-10-11 19:05:01.468396234 [W:onnxruntime:Default, device_discovery.cc:95 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
+[keereker] http=200 posts=60 videos=49 (no_link=1) | rejected: old=0 done=14 bad_length=3 low_views=4 no_laugh=27 | OK=1 | best_video_views=26400 newest=2026-10-11
+2 candidate videos
+trying keereker/256498 (5400 views)
+[0;93m2026-10-11 19:39:06.120188678 [W:onnxruntime:Default, device_discovery.cc:95 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
+  speech found (lang=fa), subtitles burned
+  translate error (gtx, try 1): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
+  translate error (gtx, try 2): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
+  translated with mymemory
+  failed (1): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+Traceback (most recent call last):
+  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
+    process(p)
+  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 421, in process
+    send_video(final, build_caption(clean_caption(p["text"]), p["channel"]))
+  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 398, in send_video
+    raise RuntimeError(f"Telegram error: {r.text[:300]}")
+RuntimeError: Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+trying nature/20432 (5010 views)
   no speech, posting without subtitles
   translate error (gtx, try 1): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
   translate error (gtx, try 2): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
   translated with mymemory
-  failed (2): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+  failed (3): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
 Traceback (most recent call last):
   File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
     process(p)
