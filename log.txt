@@ -1,5 +1,5 @@
 settings: MIN_VIEWS=5000 MAX_AGE_DAYS=14 PAGES=3 target=@my_reels_fa
-[funnyanimals_t_me] http=200 posts=60 videos=59 (no_link=1) | rejected: old=47 done=0 bad_length=0 low_views=12 no_laugh=0 | OK=0 | best_video_views=4840 newest=2026-10-11
+[funnyanimals_t_me] http=200 posts=60 videos=59 (no_link=1) | rejected: old=47 done=0 bad_length=0 low_views=12 no_laugh=0 | OK=0 | best_video_views=4850 newest=2026-10-11
 [animals_funny_videos] http=200 posts=60 videos=58 (no_link=1) | rejected: old=57 done=0 bad_length=0 low_views=1 no_laugh=0 | OK=0 | best_video_views=4130 newest=2026-10-11
 [funny1pet] http=200 posts=52 videos=29 (no_link=13) | rejected: old=25 done=0 bad_length=0 low_views=4 no_laugh=0 | OK=0 | best_video_views=4160 newest=2026-10-09
 [you_can_pet] http=200 posts=58 videos=55 (no_link=0) | rejected: old=53 done=0 bad_length=0 low_views=2 no_laugh=0 | OK=0 | best_video_views=11300 newest=2026-10-11
