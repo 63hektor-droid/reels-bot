@@ -414,7 +414,8 @@
   "nature/20447",
   "keereker/256631",
   "keereker/256630",
-  "nature/20440"
+  "nature/20440",
+  "keereker/256634"
  ],
  "fails": {
   "plantainchipps/18469": 3,
@@ -628,8 +629,8 @@
   "keereker/256631": 3,
   "keereker/256630": 3,
   "nature/20440": 3,
-  "keereker/256634": 2,
-  "keereker/256641": 1,
-  "nature/20435": 1
+  "keereker/256634": 3,
+  "keereker/256641": 2,
+  "nature/20435": 2
  }
 }
