@@ -3,30 +3,18 @@ settings: MIN_VIEWS=5000 MAX_AGE_DAYS=14 PAGES=3 target=@my_reels_fa
 [animals_funny_videos] http=200 posts=60 videos=58 (no_link=1) | rejected: old=57 done=0 bad_length=0 low_views=1 no_laugh=0 | OK=0 | best_video_views=4320 newest=2026-10-11
 [funny1pet] http=200 posts=52 videos=29 (no_link=13) | rejected: old=23 done=0 bad_length=0 low_views=6 no_laugh=0 | OK=0 | best_video_views=4180 newest=2026-10-14
 [you_can_pet] http=200 posts=58 videos=55 (no_link=0) | rejected: old=54 done=0 bad_length=0 low_views=1 no_laugh=0 | OK=0 | best_video_views=11300 newest=2026-10-11
-[cutehappystuffs] http=200 posts=56 videos=19 (no_link=3) | rejected: old=0 done=0 bad_length=0 low_views=19 no_laugh=0 | OK=0 | best_video_views=3470 newest=2026-10-14
-[nature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=0 done=10 bad_length=0 low_views=49 no_laugh=0 | OK=0 | best_video_views=6110 newest=2026-10-14
+[cutehappystuffs] http=200 posts=57 videos=20 (no_link=3) | rejected: old=0 done=0 bad_length=0 low_views=20 no_laugh=0 | OK=0 | best_video_views=3470 newest=2026-10-15
+[nature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=0 done=10 bad_length=0 low_views=49 no_laugh=0 | OK=0 | best_video_views=6120 newest=2026-10-14
 [tgrealnature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=42 done=8 bad_length=0 low_views=9 no_laugh=0 | OK=0 | best_video_views=8109 newest=2026-10-14
-[keereker] http=200 posts=59 videos=40 (no_link=1) | rejected: old=0 done=14 bad_length=1 low_views=0 no_laugh=23 | OK=2 | best_video_views=26000 newest=2026-10-14
-2 candidate videos
-trying keereker/256657 (9200 views)
-[0;93m2026-10-15 00:10:49.311271529 [W:onnxruntime:Default, device_discovery.cc:95 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
-  no speech, posting without subtitles
+[keereker] http=200 posts=59 videos=40 (no_link=1) | rejected: old=0 done=15 bad_length=1 low_views=0 no_laugh=23 | OK=1 | best_video_views=26200 newest=2026-10-14
+1 candidate videos
+trying keereker/256663 (6910 views)
+[0;93m2026-10-15 01:04:22.701322764 [W:onnxruntime:Default, device_discovery.cc:95 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
+  speech found (lang=fa), subtitles burned
   translate error (gtx, try 1): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
   translate error (gtx, try 2): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
   translated with mymemory
   failed (3): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
-Traceback (most recent call last):
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
-    process(p)
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 421, in process
-    send_video(final, build_caption(clean_caption(p["text"]), p["channel"]))
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 398, in send_video
-    raise RuntimeError(f"Telegram error: {r.text[:300]}")
-RuntimeError: Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
-trying keereker/256663 (6700 views)
-  speech found (lang=fa), subtitles burned
-  translated with gtx
-  failed (2): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
 Traceback (most recent call last):
   File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
     process(p)
