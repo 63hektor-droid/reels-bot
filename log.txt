@@ -3,16 +3,18 @@ settings: MIN_VIEWS=5000 MAX_AGE_DAYS=14 PAGES=3 target=@my_reels_fa
 [animals_funny_videos] http=200 posts=60 videos=58 (no_link=1) | rejected: old=57 done=0 bad_length=0 low_views=1 no_laugh=0 | OK=0 | best_video_views=4510 newest=2026-10-11
 [funny1pet] http=200 posts=54 videos=31 (no_link=14) | rejected: old=21 done=0 bad_length=0 low_views=10 no_laugh=0 | OK=0 | best_video_views=4210 newest=2026-10-18
 [you_can_pet] http=200 posts=60 videos=57 (no_link=0) | rejected: old=54 done=0 bad_length=0 low_views=3 no_laugh=0 | OK=0 | best_video_views=11300 newest=2026-10-16
-[cutehappystuffs] http=200 posts=57 videos=19 (no_link=1) | rejected: old=0 done=0 bad_length=0 low_views=19 no_laugh=0 | OK=0 | best_video_views=3320 newest=2026-10-18
+[cutehappystuffs] http=200 posts=57 videos=19 (no_link=1) | rejected: old=0 done=0 bad_length=0 low_views=19 no_laugh=0 | OK=0 | best_video_views=3330 newest=2026-10-18
 [nature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=0 done=9 bad_length=0 low_views=50 no_laugh=0 | OK=0 | best_video_views=5830 newest=2026-10-18
 [tgrealnature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=38 done=11 bad_length=0 low_views=10 no_laugh=0 | OK=0 | best_video_views=8160 newest=2026-10-17
 [keereker] http=200 posts=60 videos=46 (no_link=0) | rejected: old=0 done=15 bad_length=1 low_views=0 no_laugh=29 | OK=1 | best_video_views=24500 newest=2026-10-18
 1 candidate videos
-trying keereker/256837 (5510 views)
-[0;93m2026-10-19 00:09:04.130388823 [W:onnxruntime:Default, device_discovery.cc:95 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
+trying keereker/256837 (5660 views)
+[0;93m2026-10-19 01:08:45.515581934 [W:onnxruntime:Default, device_discovery.cc:95 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
   speech found (lang=fa), subtitles burned
-  translated with gtx
-  failed (2): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+  translate error (gtx, try 1): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
+  translate error (gtx, try 2): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
+  translated with mymemory
+  failed (3): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
 Traceback (most recent call last):
   File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
     process(p)
