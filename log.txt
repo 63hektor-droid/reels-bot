@@ -1,20 +1,18 @@
 settings: MIN_VIEWS=5000 MAX_AGE_DAYS=14 PAGES=3 target=@my_reels_fa
 [funnyanimals_t_me] http=200 posts=60 videos=59 (no_link=1) | rejected: old=45 done=0 bad_length=0 low_views=14 no_laugh=0 | OK=0 | best_video_views=5050 newest=2026-10-27
-[animals_funny_videos] http=200 posts=60 videos=55 (no_link=1) | rejected: old=53 done=0 bad_length=0 low_views=2 no_laugh=0 | OK=0 | best_video_views=5140 newest=2026-10-26
+[animals_funny_videos] http=200 posts=60 videos=55 (no_link=1) | rejected: old=53 done=0 bad_length=0 low_views=2 no_laugh=0 | OK=0 | best_video_views=5150 newest=2026-10-26
 [funny1pet] http=200 posts=53 videos=30 (no_link=14) | rejected: old=24 done=0 bad_length=0 low_views=6 no_laugh=0 | OK=0 | best_video_views=4240 newest=2026-10-27
 [you_can_pet] http=200 posts=55 videos=53 (no_link=0) | rejected: old=47 done=0 bad_length=0 low_views=6 no_laugh=0 | OK=0 | best_video_views=11500 newest=2026-10-27
-[cutehappystuffs] http=200 posts=59 videos=19 (no_link=1) | rejected: old=0 done=0 bad_length=0 low_views=19 no_laugh=0 | OK=0 | best_video_views=3710 newest=2026-10-27
-[nature] http=200 posts=60 videos=58 (no_link=1) | rejected: old=0 done=0 bad_length=0 low_views=49 no_laugh=0 | OK=9 | best_video_views=6180 newest=2026-10-27
-[tgrealnature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=38 done=11 bad_length=0 low_views=9 no_laugh=0 | OK=1 | best_video_views=7860 newest=2026-10-27
-[keereker] http=200 posts=60 videos=40 (no_link=2) | rejected: old=0 done=2 bad_length=0 low_views=0 no_laugh=21 | OK=17 | best_video_views=24700 newest=2026-10-27
-27 candidate videos
-trying keereker/257201 (23300 views)
-[0;93m2026-10-28 00:36:39.597442172 [W:onnxruntime:Default, device_discovery.cc:95 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
-  speech found (lang=fa), subtitles burned
-  translate error (gtx, try 1): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
-  translate error (gtx, try 2): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
-  translated with mymemory
-  failed (3): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+[cutehappystuffs] http=200 posts=59 videos=20 (no_link=1) | rejected: old=0 done=0 bad_length=0 low_views=20 no_laugh=0 | OK=0 | best_video_views=3720 newest=2026-10-28
+[nature] http=200 posts=60 videos=58 (no_link=1) | rejected: old=0 done=0 bad_length=0 low_views=49 no_laugh=0 | OK=9 | best_video_views=6200 newest=2026-10-28
+[tgrealnature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=38 done=11 bad_length=0 low_views=9 no_laugh=0 | OK=1 | best_video_views=7870 newest=2026-10-27
+[keereker] http=200 posts=60 videos=41 (no_link=2) | rejected: old=0 done=3 bad_length=1 low_views=2 no_laugh=20 | OK=15 | best_video_views=24900 newest=2026-10-28
+25 candidate videos
+trying keereker/257228 (22500 views)
+[0;93m2026-10-28 06:25:47.927438462 [W:onnxruntime:Default, device_discovery.cc:95 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
+  no speech, posting without subtitles
+  translated with gtx
+  failed (1): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
 Traceback (most recent call last):
   File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
     process(p)
@@ -23,25 +21,9 @@ Traceback (most recent call last):
   File "/home/runner/work/reels-bot/reels-bot/bot.py", line 398, in send_video
     raise RuntimeError(f"Telegram error: {r.text[:300]}")
 RuntimeError: Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
-trying keereker/257195 (22800 views)
-  speech found (lang=fa), subtitles burned
-  translate error (gtx, try 1): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
-  translate error (gtx, try 2): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
-  translated with mymemory
-  failed (3): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
-Traceback (most recent call last):
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
-    process(p)
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 421, in process
-    send_video(final, build_caption(clean_caption(p["text"]), p["channel"]))
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 398, in send_video
-    raise RuntimeError(f"Telegram error: {r.text[:300]}")
-RuntimeError: Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
-trying keereker/257209 (20800 views)
-  speech found (lang=fa), subtitles burned
-  translate error (gtx, try 1): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
-  translate error (gtx, try 2): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
-  translated with mymemory
+trying keereker/257221 (21400 views)
+  no speech, posting without subtitles
+  translated with gtx
   failed (2): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
 Traceback (most recent call last):
   File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
@@ -51,11 +33,22 @@ Traceback (most recent call last):
   File "/home/runner/work/reels-bot/reels-bot/bot.py", line 398, in send_video
     raise RuntimeError(f"Telegram error: {r.text[:300]}")
 RuntimeError: Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
-trying keereker/257208 (20300 views)
-  no speech, posting without subtitles
-  translate error (gtx, try 1): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
-  translate error (gtx, try 2): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
-  translated with mymemory
+trying keereker/257209 (21100 views)
+  speech found (lang=fa), subtitles burned
+  translated with gtx
+  failed (3): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+Traceback (most recent call last):
+  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
+    process(p)
+  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 421, in process
+    send_video(final, build_caption(clean_caption(p["text"]), p["channel"]))
+  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 398, in send_video
+    raise RuntimeError(f"Telegram error: {r.text[:300]}")
+RuntimeError: Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+trying keereker/257214 (20900 views)
+  download error (try 1/3): 500 Server Error: Internal Server Error for url: https://cdn4.telesco.pe/file/a3
+  speech found (lang=fa), subtitles burned
+  translated with gtx
   failed (1): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
 Traceback (most recent call last):
   File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
@@ -65,12 +58,11 @@ Traceback (most recent call last):
   File "/home/runner/work/reels-bot/reels-bot/bot.py", line 398, in send_video
     raise RuntimeError(f"Telegram error: {r.text[:300]}")
 RuntimeError: Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
-trying keereker/257221 (17100 views)
-  no speech, posting without subtitles
-  translate error (gtx, try 1): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
-  translate error (gtx, try 2): 429 Client Error: Too Many Requests for url: https://translate.googleapis.com/tr
-  translated with mymemory
-  failed (1): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+trying keereker/257208 (20600 views)
+  translated with gtx
+  speech found (lang=en), subtitles burned
+  translated with gtx
+  failed (2): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
 Traceback (most recent call last):
   File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
     process(p)
