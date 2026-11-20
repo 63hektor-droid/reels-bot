@@ -1,15 +1,15 @@
 settings: MIN_VIEWS=5000 MAX_AGE_DAYS=14 PAGES=3 target=@my_reels_fa
-[funnyanimals_t_me] http=200 posts=56 videos=54 (no_link=0) | rejected: old=44 done=0 bad_length=0 low_views=10 no_laugh=0 | OK=0 | best_video_views=7940 newest=2026-11-19
-[animals_funny_videos] http=200 posts=60 videos=54 (no_link=1) | rejected: old=54 done=0 bad_length=0 low_views=0 no_laugh=0 | OK=0 | best_video_views=6170 newest=2026-11-03
-[funny1pet] http=200 posts=53 videos=34 (no_link=9) | rejected: old=23 done=0 bad_length=0 low_views=11 no_laugh=0 | OK=0 | best_video_views=2500 newest=2026-11-20
+[funnyanimals_t_me] http=200 posts=57 videos=55 (no_link=0) | rejected: old=44 done=0 bad_length=0 low_views=11 no_laugh=0 | OK=0 | best_video_views=8000 newest=2026-11-20
+[animals_funny_videos] http=200 posts=60 videos=54 (no_link=1) | rejected: old=54 done=0 bad_length=0 low_views=0 no_laugh=0 | OK=0 | best_video_views=6180 newest=2026-11-03
+[funny1pet] http=200 posts=52 videos=34 (no_link=9) | rejected: old=22 done=0 bad_length=0 low_views=12 no_laugh=0 | OK=0 | best_video_views=2510 newest=2026-11-20
 [you_can_pet] http=200 posts=57 videos=55 (no_link=0) | rejected: old=48 done=0 bad_length=0 low_views=7 no_laugh=0 | OK=0 | best_video_views=6190 newest=2026-11-17
-[cutehappystuffs] http=200 posts=60 videos=27 (no_link=0) | rejected: old=0 done=0 bad_length=0 low_views=27 no_laugh=0 | OK=0 | best_video_views=3940 newest=2026-11-20
-[nature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=0 done=0 bad_length=0 low_views=48 no_laugh=0 | OK=11 | best_video_views=6570 newest=2026-11-20
-[tgrealnature] http=200 posts=60 videos=60 (no_link=0) | rejected: old=41 done=11 bad_length=0 low_views=6 no_laugh=0 | OK=2 | best_video_views=8160 newest=2026-11-19
-[keereker] http=200 posts=60 videos=51 (no_link=0) | rejected: old=0 done=0 bad_length=2 low_views=4 no_laugh=26 | OK=19 | best_video_views=25300 newest=2026-11-20
+[cutehappystuffs] http=200 posts=60 videos=27 (no_link=0) | rejected: old=0 done=0 bad_length=0 low_views=27 no_laugh=0 | OK=0 | best_video_views=3960 newest=2026-11-20
+[nature] http=200 posts=60 videos=59 (no_link=1) | rejected: old=0 done=0 bad_length=0 low_views=47 no_laugh=0 | OK=12 | best_video_views=6630 newest=2026-11-20
+[tgrealnature] http=200 posts=60 videos=60 (no_link=0) | rejected: old=40 done=11 bad_length=0 low_views=7 no_laugh=0 | OK=2 | best_video_views=8160 newest=2026-11-20
+[keereker] http=200 posts=60 videos=45 (no_link=0) | rejected: old=0 done=0 bad_length=1 low_views=3 no_laugh=23 | OK=18 | best_video_views=24000 newest=2026-11-20
 32 candidate videos
-trying keereker/258281 (24800 views)
-[0;93m2026-11-20 13:42:29.705164515 [W:onnxruntime:Default, device_discovery.cc:95 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
+trying keereker/258289 (24000 views)
+[0;93m2026-11-20 21:36:35.462833151 [W:onnxruntime:Default, device_discovery.cc:95 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
   speech found (lang=fa), subtitles burned
   translated with gtx
   failed (1): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
@@ -21,7 +21,19 @@ Traceback (most recent call last):
   File "/home/runner/work/reels-bot/reels-bot/bot.py", line 398, in send_video
     raise RuntimeError(f"Telegram error: {r.text[:300]}")
 RuntimeError: Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
-trying keereker/258280 (24700 views)
+trying keereker/258303 (23500 views)
+  speech found (lang=fa), subtitles burned
+  translated with gtx
+  failed (1): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+Traceback (most recent call last):
+  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
+    process(p)
+  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 421, in process
+    send_video(final, build_caption(clean_caption(p["text"]), p["channel"]))
+  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 398, in send_video
+    raise RuntimeError(f"Telegram error: {r.text[:300]}")
+RuntimeError: Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+trying keereker/258292 (23200 views)
   no speech, posting without subtitles
   translated with gtx
   failed (1): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
@@ -33,10 +45,10 @@ Traceback (most recent call last):
   File "/home/runner/work/reels-bot/reels-bot/bot.py", line 398, in send_video
     raise RuntimeError(f"Telegram error: {r.text[:300]}")
 RuntimeError: Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
-trying keereker/258257 (24600 views)
-  no speech, posting without subtitles
+trying keereker/258293 (23100 views)
+  speech found (lang=fa), subtitles burned
   translated with gtx
-  failed (3): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+  failed (1): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
 Traceback (most recent call last):
   File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
     process(p)
@@ -45,22 +57,10 @@ Traceback (most recent call last):
   File "/home/runner/work/reels-bot/reels-bot/bot.py", line 398, in send_video
     raise RuntimeError(f"Telegram error: {r.text[:300]}")
 RuntimeError: Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
-trying keereker/258262 (24600 views)
+trying keereker/258296 (23000 views)
   speech found (lang=fa), subtitles burned
   translated with gtx
-  failed (3): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
-Traceback (most recent call last):
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
-    process(p)
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 421, in process
-    send_video(final, build_caption(clean_caption(p["text"]), p["channel"]))
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 398, in send_video
-    raise RuntimeError(f"Telegram error: {r.text[:300]}")
-RuntimeError: Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
-trying keereker/258270 (24600 views)
-  speech found (lang=fa), subtitles burned
-  translated with gtx
-  failed (2): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+  failed (1): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
 Traceback (most recent call last):
   File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
     process(p)
