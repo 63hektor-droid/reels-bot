@@ -1,51 +1,15 @@
 settings: MIN_VIEWS=5000 MAX_AGE_DAYS=14 PAGES=3 target=@my_reels_fa
-[funnyanimals_t_me] http=200 posts=56 videos=53 (no_link=1) | rejected: old=41 done=0 bad_length=0 low_views=12 no_laugh=0 | OK=0 | best_video_views=8500 newest=2026-11-25
-[animals_funny_videos] http=200 posts=60 videos=52 (no_link=1) | rejected: old=51 done=0 bad_length=0 low_views=1 no_laugh=0 | OK=0 | best_video_views=6440 newest=2026-11-23
+[funnyanimals_t_me] http=200 posts=56 videos=53 (no_link=1) | rejected: old=40 done=0 bad_length=0 low_views=13 no_laugh=0 | OK=0 | best_video_views=8530 newest=2026-11-27
+[animals_funny_videos] http=200 posts=60 videos=52 (no_link=1) | rejected: old=51 done=0 bad_length=0 low_views=1 no_laugh=0 | OK=0 | best_video_views=6450 newest=2026-11-23
 [funny1pet] http=200 posts=54 videos=31 (no_link=12) | rejected: old=14 done=0 bad_length=0 low_views=17 no_laugh=0 | OK=0 | best_video_views=2560 newest=2026-11-27
 [you_can_pet] http=200 posts=58 videos=57 (no_link=0) | rejected: old=52 done=0 bad_length=0 low_views=5 no_laugh=0 | OK=0 | best_video_views=6230 newest=2026-11-26
-[cutehappystuffs] http=200 posts=58 videos=24 (no_link=0) | rejected: old=0 done=0 bad_length=0 low_views=23 no_laugh=1 | OK=0 | best_video_views=6190 newest=2026-11-27
-[nature] http=200 posts=60 videos=58 (no_link=2) | rejected: old=0 done=0 bad_length=0 low_views=51 no_laugh=0 | OK=7 | best_video_views=5840 newest=2026-11-27
-[tgrealnature] http=200 posts=60 videos=60 (no_link=0) | rejected: old=38 done=11 bad_length=0 low_views=9 no_laugh=0 | OK=2 | best_video_views=8280 newest=2026-11-26
-[keereker] http=200 posts=60 videos=45 (no_link=0) | rejected: old=0 done=0 bad_length=2 low_views=9 no_laugh=20 | OK=14 | best_video_views=23200 newest=2026-11-27
-23 candidate videos
-trying keereker/258602 (23200 views)
-[0;93m2026-11-27 15:59:26.783730081 [W:onnxruntime:Default, device_discovery.cc:95 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
-  no speech, posting without subtitles
-  translated with gtx
-  failed (2): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
-Traceback (most recent call last):
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
-    process(p)
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 421, in process
-    send_video(final, build_caption(clean_caption(p["text"]), p["channel"]))
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 398, in send_video
-    raise RuntimeError(f"Telegram error: {r.text[:300]}")
-RuntimeError: Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
-trying keereker/258626 (22800 views)
-  no speech, posting without subtitles
-  translated with gtx
-  failed (1): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
-Traceback (most recent call last):
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
-    process(p)
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 421, in process
-    send_video(final, build_caption(clean_caption(p["text"]), p["channel"]))
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 398, in send_video
-    raise RuntimeError(f"Telegram error: {r.text[:300]}")
-RuntimeError: Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
-trying keereker/258625 (22300 views)
-  no speech, posting without subtitles
-  translated with gtx
-  failed (1): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
-Traceback (most recent call last):
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
-    process(p)
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 421, in process
-    send_video(final, build_caption(clean_caption(p["text"]), p["channel"]))
-  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 398, in send_video
-    raise RuntimeError(f"Telegram error: {r.text[:300]}")
-RuntimeError: Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
-trying keereker/258610 (22200 views)
+[cutehappystuffs] http=200 posts=58 videos=24 (no_link=0) | rejected: old=0 done=0 bad_length=0 low_views=23 no_laugh=1 | OK=0 | best_video_views=6210 newest=2026-11-27
+[nature] http=200 posts=60 videos=58 (no_link=2) | rejected: old=0 done=0 bad_length=0 low_views=52 no_laugh=0 | OK=6 | best_video_views=6110 newest=2026-11-27
+[tgrealnature] http=200 posts=60 videos=60 (no_link=0) | rejected: old=37 done=11 bad_length=0 low_views=9 no_laugh=0 | OK=3 | best_video_views=8290 newest=2026-11-27
+[keereker] http=200 posts=60 videos=40 (no_link=1) | rejected: old=0 done=0 bad_length=1 low_views=0 no_laugh=23 | OK=16 | best_video_views=23500 newest=2026-11-27
+25 candidate videos
+trying keereker/258628 (23500 views)
+[0;93m2026-11-27 23:54:07.415117466 [W:onnxruntime:Default, device_discovery.cc:95 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
   speech found (lang=fa), subtitles burned
   translated with gtx
   failed (1): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
@@ -57,10 +21,10 @@ Traceback (most recent call last):
   File "/home/runner/work/reels-bot/reels-bot/bot.py", line 398, in send_video
     raise RuntimeError(f"Telegram error: {r.text[:300]}")
 RuntimeError: Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
-trying keereker/258614 (21800 views)
+trying keereker/258626 (23400 views)
   no speech, posting without subtitles
   translated with gtx
-  failed (1): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+  failed (2): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
 Traceback (most recent call last):
   File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
     process(p)
@@ -69,4 +33,24 @@ Traceback (most recent call last):
   File "/home/runner/work/reels-bot/reels-bot/bot.py", line 398, in send_video
     raise RuntimeError(f"Telegram error: {r.text[:300]}")
 RuntimeError: Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+trying keereker/258625 (23000 views)
+  no speech, posting without subtitles
+  translated with gtx
+  failed (2): Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+Traceback (most recent call last):
+  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 447, in main
+    process(p)
+  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 421, in process
+    send_video(final, build_caption(clean_caption(p["text"]), p["channel"]))
+  File "/home/runner/work/reels-bot/reels-bot/bot.py", line 398, in send_video
+    raise RuntimeError(f"Telegram error: {r.text[:300]}")
+RuntimeError: Telegram error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+trying keereker/258632 (22700 views)
+  translate error (gtx, try 1): 400 Client Error: Bad Request for url: https://translate.googleapis.com/translat
+  translate error (gtx, try 2): 400 Client Error: Bad Request for url: https://translate.googleapis.com/translat
+  translate error (mymemory, try 1): mymemory refused: 
+  translate error (mymemory, try 2): mymemory refused: 
+  translate error (google, try 1): Server Error: You made too many requests to the server.According to google, you 
+  translate error (google, try 2): Server Error: You made too many requests to the server.According to google, you 
+  translation is down, will retry next run: mymemory: mymemory refused: ; google: Server Error: You made too many requests to the server.According to google, you ; google: Server Error: You made too many requests to the server.According to google, you 
 nothing posted this run
